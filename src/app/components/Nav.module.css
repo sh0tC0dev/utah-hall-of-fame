@@ -1,0 +1,92 @@
+.nav {
+  background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy-deep) 100%);
+  padding: 1.1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow:
+    0 4px 20px rgba(17, 29, 53, 0.5),
+    0 1px 4px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Gold accent bar — thicker, with glow */
+.nav::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent 5%,
+    var(--color-burnt-orange) 20%,
+    var(--color-sunset-gold) 40%,
+    var(--color-warm-gold) 50%,
+    var(--color-sunset-gold) 60%,
+    var(--color-burnt-orange) 80%,
+    transparent 95%
+  );
+  box-shadow: 0 2px 12px rgba(201, 168, 76, 0.3);
+}
+
+.navLink {
+  color: rgba(245, 235, 224, 0.6);
+  text-decoration: none;
+  font-family: var(--font-cormorant);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: color 0.3s, text-shadow 0.3s;
+  padding: 0.25rem 0;
+}
+
+.navLink:hover {
+  color: var(--color-sandstone-light);
+  text-shadow: 0 0 20px rgba(232, 201, 160, 0.25);
+}
+
+.navLink.active {
+  color: var(--color-warm-gold);
+  position: relative;
+  text-shadow: 0 0 16px rgba(201, 168, 76, 0.2);
+}
+
+.navLink.active::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: -4px;
+  right: -4px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-warm-gold), transparent);
+  box-shadow: 0 0 8px rgba(201, 168, 76, 0.4);
+}
+
+@media (max-width: 768px) {
+  .nav {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 0.8rem 1rem;
+  }
+  .navLink {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    gap: 0.8rem 1.2rem;
+  }
+  .navLink {
+    font-size: 0.72rem;
+  }
+}

@@ -1,0 +1,42 @@
+export interface Inductee {
+  name: string;
+  photo: string;
+}
+
+export const inductees: Inductee[] = [
+  { name: "Hortense Wood", photo: "http://www.utahtrap.com/HORTENSE_WOOD.jpg" },
+  { name: "Pat Miller", photo: "http://www.utahtrap.com/PAT_MILLER.jpg" },
+  { name: "Sam Sharman", photo: "http://www.utahtrap.com/SAM_SHARMAN.jpg" },
+  { name: "E.L. Ford", photo: "http://www.utahtrap.com/E.L_FORD.jpg" },
+  { name: "C.H. Reilly", photo: "http://www.utahtrap.com/CH_REILLY.jpg" },
+  { name: "Gus Becker", photo: "http://www.utahtrap.com/GUS_BECKER.jpg" },
+  { name: "Ron Sellers", photo: "http://www.utahtrap.com/RON_SELLERS.jpg" },
+  { name: "Arvin Labrum", photo: "http://www.utahtrap.com/ARVIN_LABRUM.jpg" },
+  { name: "Ken Adamson", photo: "http://www.utahtrap.com/KEN_ADAMSON.jpg" },
+  { name: "Ann Christie", photo: "http://www.utahtrap.com/ANN_CHRISTIE.jpg" },
+  { name: "O.J. Coon", photo: "http://www.utahtrap.com/O.J.COON.jpg" },
+  { name: "Josephine Leavitt", photo: "http://www.utahtrap.com/JOSEPHINE_LEAVITT.jpg" },
+  { name: "John M. Browning", photo: "http://www.utahtrap.com/JOHN_M._BROWNING.jpg" },
+  { name: "Tom Lynott", photo: "http://www.utahtrap.com/TOM_LYNOTT.jpg" },
+  { name: "Walter Langhorst", photo: "http://www.utahtrap.com/WALT_LANGHORST.jpg" },
+  { name: "Dean Hurd", photo: "http://www.utahtrap.com/DEAN_HURD.jpg" },
+  { name: "Randy Freston", photo: "http://www.utahtrap.com/RANDY_FRESTON.jpg" },
+  { name: "H. Barr Carlisle", photo: "http://www.utahtrap.com/H._BARR_CARLISLE.jpg" },
+  { name: "Dale Amos", photo: "http://www.utahtrap.com/DALE_AMOS.jpg" },
+  { name: "Ron Christensen", photo: "http://www.utahtrap.com/RON_CHRISTENSEN.jpg" },
+  { name: "Doug Westenskow", photo: "http://www.utahtrap.com/DOUG_WESTENSKOW.jpg" },
+  { name: "Brent Epperson", photo: "http://www.utahtrap.com/BRENT_EPPERSON.jpg" },
+  { name: "Bill Hunter", photo: "http://www.utahtrap.com/WILLIAM__BILL__HUNTER.jpg" },
+  { name: "Jim Duke", photo: "http://www.utahtrap.com/Jim_Duke.jpg" },
+  { name: "Larry Mitchell", photo: "http://www.utahtrap.com/LARRY_MITCHEL.jpg" },
+  { name: "Joe Sudbury Sr.", photo: "http://www.utahtrap.com/publishImages/HOF~~element226.jpg" },
+  { name: "Linda Nicholl", photo: "http://www.utahtrap.com/Shotgun002-web.jpg" },
+  { name: "Joe Mabey", photo: "http://www.utahtrap.com/publishImages/HOF~~element231.jpg" },
+  { name: "Bill Salt", photo: "http://www.utahtrap.com/Shotgun003-web.jpg" },
+  { name: "Bob Spencer", photo: "http://www.utahtrap.com/Scan.jpeg" },
+  { name: "Gene Majers", photo: "http://www.utahtrap.com/gene.jpg" },
+  { name: "Stanley Jorgenson", photo: "http://www.utahtrap.com/publishImages/HOF~~element239.JPG" },
+  { name: "Ardith Stitt", photo: "http://www.utahtrap.com/Ardith.jpg" },
+  { name: "Sharred Oaks", photo: "http://www.utahtrap.com/publishImages/HOF~~element244.jpg" },
+  { name: "Leslie (Ford) Hight", photo: "http://www.utahtrap.com/publishImages/HOF~~element245.jpg" },
+];
