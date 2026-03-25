@@ -1,0 +1,104 @@
+.page { max-width: 800px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+
+.title {
+  font-family: var(--font-playfair); font-weight: 800;
+  font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--color-navy);
+  text-align: center; margin-bottom: 0.3rem;
+}
+
+.subtitle {
+  font-family: var(--font-cormorant); font-weight: 600; font-size: 1.05rem;
+  color: var(--color-burnt-orange); letter-spacing: 0.28em;
+  text-transform: uppercase; text-align: center; margin-bottom: 1rem;
+}
+
+.pdfLink {
+  text-align: center; font-family: var(--font-fell); font-size: 0.9rem;
+  color: var(--color-text-mid); margin-bottom: 2rem;
+}
+
+.link { color: var(--color-burnt-orange); text-decoration: underline; transition: color 0.3s; }
+.link:hover { color: var(--color-navy); }
+
+.form { display: flex; flex-direction: column; gap: 0; }
+
+.fieldset {
+  border: 1px solid rgba(212, 165, 116, 0.2); padding: 2rem;
+  margin-bottom: 2rem; background: rgba(250, 246, 239, 0.3);
+}
+
+.legend {
+  font-family: var(--font-playfair); font-weight: 700; font-size: 1.15rem;
+  color: var(--color-navy); padding: 0 0.8rem;
+}
+
+.fieldsetDesc {
+  font-family: var(--font-fell); font-size: 0.9rem; color: var(--color-text-mid);
+  font-style: italic; margin-bottom: 1rem;
+}
+
+.field { margin-bottom: 1rem; }
+
+.label {
+  display: block; font-family: var(--font-cormorant); font-weight: 600;
+  font-size: 0.9rem; color: var(--color-text-dark); letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+
+.input, .select, .textarea {
+  width: 100%; font-family: var(--font-baskerville); font-size: 0.95rem;
+  padding: 0.55rem 0.8rem; border: 1px solid var(--color-sandstone-light);
+  background: var(--color-cream); color: var(--color-text-dark); transition: border-color 0.3s;
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  outline: none; border-color: var(--color-warm-gold);
+  box-shadow: 0 0 0 2px rgba(201, 168, 76, 0.2);
+}
+
+.inputSmall { max-width: 100px; }
+.textarea { resize: vertical; line-height: 1.7; }
+
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.row3 { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem; }
+
+.champRow { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.6rem; }
+.champNum {
+  font-family: var(--font-cormorant); font-weight: 700; font-size: 0.9rem;
+  color: var(--color-text-mid); width: 1.5rem; flex-shrink: 0;
+}
+
+.error {
+  font-family: var(--font-baskerville); color: #b91c1c; font-size: 0.9rem;
+  text-align: center; margin-bottom: 1rem;
+}
+
+.submitBtn {
+  display: block; width: 100%; font-family: var(--font-cormorant); font-weight: 700;
+  font-size: 1rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--color-navy-deep);
+  background: linear-gradient(180deg, var(--color-warm-gold), var(--color-deep-gold));
+  padding: 0.9rem 2rem; border: none; cursor: pointer;
+  transition: opacity 0.3s, box-shadow 0.3s;
+  box-shadow: 0 3px 12px rgba(168, 135, 46, 0.3);
+}
+
+.submitBtn:hover:not(:disabled) { opacity: 0.9; box-shadow: 0 5px 20px rgba(168, 135, 46, 0.4); }
+.submitBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.successMessage { text-align: center; padding: 4rem 2rem; }
+.successTitle {
+  font-family: var(--font-playfair); font-weight: 700; font-size: 1.8rem;
+  color: var(--color-navy); margin-bottom: 1rem;
+}
+.successText {
+  font-family: var(--font-fell); font-size: 1.05rem; color: var(--color-text-mid);
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .row2, .row3 { grid-template-columns: 1fr; }
+  .champRow { flex-wrap: wrap; }
+  .inputSmall { max-width: none; }
+  .fieldset { padding: 1.5rem 1rem; }
+}
