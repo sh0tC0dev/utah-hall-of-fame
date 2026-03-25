@@ -1,0 +1,22 @@
+.header {
+  padding: 3rem 2rem 1rem;
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-playfair);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--color-navy);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.3rem;
+}
+
+.subtitle {
+  font-family: var(--font-cormorant);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--color-burnt-orange);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
