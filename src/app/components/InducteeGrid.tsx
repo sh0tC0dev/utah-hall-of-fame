@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
+import Image from "next/image";
 import type { Inductee } from "../data";
 import { PersonIcon } from "./PersonIcon";
 import styles from "./InducteeGrid.module.css";
@@ -17,11 +18,11 @@ function InducteePhoto({ src, alt }: { src: string; alt: string }) {
   }
 
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
+    <Image
       src={src}
       alt={alt}
-      loading="lazy"
+      fill
+      sizes="132px"
       className={styles.photoImg}
       onError={() => setFailed(true)}
     />
@@ -144,10 +145,11 @@ function ModalPhoto({ src, alt }: { src: string; alt: string }) {
   }
 
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
+    <Image
       src={src}
       alt={alt}
+      fill
+      sizes="152px"
       className={styles.modalPhotoImg}
       onError={() => setFailed(true)}
     />
