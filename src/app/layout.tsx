@@ -5,6 +5,8 @@ import {
   Cormorant_Garamond,
   IM_Fell_English,
 } from "next/font/google";
+import { Nav } from "./components/Nav";
+import { Footer } from "./components/Footer";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -39,7 +41,10 @@ const fell = IM_Fell_English({
 });
 
 export const metadata: Metadata = {
-  title: "Utah Trapshooting Hall of Fame",
+  title: {
+    default: "Utah Trapshooting Hall of Fame",
+    template: "%s | Utah Trapshooting Hall of Fame",
+  },
   description:
     "Dedicated to preserving the legacy of those who built, championed, and elevated the sport of trapshooting in the great state of Utah.",
 };
@@ -54,7 +59,11 @@ export default function RootLayout({
       lang="en"
       className={`${playfair.variable} ${baskerville.variable} ${cormorant.variable} ${fell.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <Nav />
+        <div style={{ position: "relative", zIndex: 1 }}>{children}</div>
+        <Footer />
+      </body>
     </html>
   );
 }

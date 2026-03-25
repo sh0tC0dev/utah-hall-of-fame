@@ -1,50 +1,42 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import styles from "./Nav.module.css";
 
 const links = [
-  { href: "#top", label: "The Hall" },
-  { href: "#class-2026", label: "Class of 2026" },
-  { href: "#inductees", label: "Inductees" },
-  { href: "#about", label: "About" },
+  { href: "/", label: "Home" },
+  { href: "/inductees", label: "Inductees" },
+  { href: "/eligibility", label: "Eligibility" },
+  { href: "/nominate", label: "Nominate" },
+  { href: "/trustees", label: "Trustees" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Nav() {
-  const [activeLink, setActiveLink] = useState("#top");
-
-  const handleClick = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-      e.preventDefault();
-      const target = document.querySelector(href);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-      setActiveLink(href);
-    },
-    []
-  );
+  const pathname = usePathname();
 
   return (
     <nav className={styles.nav}>
-      {links.map((link) => (
-        <a
-          key={link.href}
-          href={link.href}
-          className={`${styles.navLink} ${activeLink === link.href ? styles.active : ""}`}
-          onClick={(e) => handleClick(e, link.href)}
-        >
-          {link.label}
-        </a>
-      ))}
-      <a
-        href="http://www.utahtrap.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className={styles.navLink}
-      >
-        USTA
-      </a>
+      <div className={styles.navLinks}>
+        {links.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={`${styles.navLink} ${
+              pathname === link.href ||
+              (link.href !== "/" && pathname.startsWith(link.href))
+                ? styles.active
+                : ""
+            }`}
+          >
+            {link.label}
+          </Link>
+        ))}
+      </div>
+      <Link href="/contact?subject=donate" className={styles.donateBtn}>
+        Donate
+      </Link>
     </nav>
   );
 }

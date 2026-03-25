@@ -1,0 +1,94 @@
+.footer {
+  background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy-deep) 100%);
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent 5%,
+    var(--color-burnt-orange) 20%,
+    var(--color-sunset-gold) 40%,
+    var(--color-warm-gold) 50%,
+    var(--color-sunset-gold) 60%,
+    var(--color-burnt-orange) 80%,
+    transparent 95%
+  );
+  box-shadow: 0 -2px 12px rgba(201, 168, 76, 0.2);
+}
+
+.footer::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(180deg, rgba(201, 168, 76, 0.04) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.footerLogo {
+  width: 80px;
+  height: auto;
+  display: block;
+  margin: 0 auto 1.2rem;
+  opacity: 0.6;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+.address {
+  font-family: var(--font-cormorant);
+  font-size: 0.88rem;
+  color: rgba(245, 235, 224, 0.55);
+  letter-spacing: 0.1em;
+  line-height: 1.7;
+  margin-bottom: 0.8rem;
+}
+
+.footerText {
+  font-family: var(--font-cormorant);
+  font-size: 0.85rem;
+  color: rgba(245, 235, 224, 0.4);
+  letter-spacing: 0.1em;
+  margin-bottom: 1.2rem;
+}
+
+.footerLink {
+  color: var(--color-sandstone-light);
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.footerLink:hover {
+  color: var(--color-parchment);
+  text-shadow: 0 0 12px rgba(232, 201, 160, 0.2);
+}
+
+.donateLink {
+  display: inline-block;
+  font-family: var(--font-cormorant);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-navy-deep);
+  background: linear-gradient(180deg, var(--color-warm-gold), var(--color-deep-gold));
+  padding: 0.6rem 1.8rem;
+  text-decoration: none;
+  transition: opacity 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(168, 135, 46, 0.3);
+}
+
+.donateLink:hover {
+  opacity: 0.9;
+  box-shadow: 0 4px 16px rgba(168, 135, 46, 0.4);
+}

@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -15,7 +15,6 @@
     inset 0 -1px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* Gold accent bar — thicker, with glow */
 .nav::after {
   content: "";
   position: absolute;
@@ -34,6 +33,12 @@
     transparent 95%
   );
   box-shadow: 0 2px 12px rgba(201, 168, 76, 0.3);
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
 }
 
 .navLink {
@@ -70,20 +75,47 @@
   box-shadow: 0 0 8px rgba(201, 168, 76, 0.4);
 }
 
+.donateBtn {
+  font-family: var(--font-cormorant);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-navy-deep);
+  background: linear-gradient(180deg, var(--color-warm-gold), var(--color-deep-gold));
+  padding: 0.45rem 1.2rem;
+  text-decoration: none;
+  transition: opacity 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 6px rgba(168, 135, 46, 0.3);
+}
+
+.donateBtn:hover {
+  opacity: 0.9;
+  box-shadow: 0 3px 12px rgba(168, 135, 46, 0.4);
+}
+
 @media (max-width: 768px) {
   .nav {
-    gap: 1.5rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0.8rem;
     padding: 0.8rem 1rem;
   }
+  .navLinks {
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   .navLink {
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     letter-spacing: 0.12em;
+  }
+  .donateBtn {
+    font-size: 0.72rem;
   }
 }
 
 @media (max-width: 480px) {
-  .nav {
+  .navLinks {
     gap: 0.8rem 1.2rem;
   }
   .navLink {
