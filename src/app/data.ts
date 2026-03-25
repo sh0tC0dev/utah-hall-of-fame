@@ -1,42 +1,58 @@
 export interface Inductee {
   name: string;
+  slug: string;
   photo: string;
+  year: number | null;
+  category: "shooting" | "administrative" | "both" | null;
+  bio: string | null;
+  featured: boolean;
 }
 
 export const inductees: Inductee[] = [
-  { name: "Hortense Wood", photo: "http://www.utahtrap.com/HORTENSE_WOOD.jpg" },
-  { name: "Pat Miller", photo: "http://www.utahtrap.com/PAT_MILLER.jpg" },
-  { name: "Sam Sharman", photo: "http://www.utahtrap.com/SAM_SHARMAN.jpg" },
-  { name: "E.L. Ford", photo: "http://www.utahtrap.com/E.L_FORD.jpg" },
-  { name: "C.H. Reilly", photo: "http://www.utahtrap.com/CH_REILLY.jpg" },
-  { name: "Gus Becker", photo: "http://www.utahtrap.com/GUS_BECKER.jpg" },
-  { name: "Ron Sellers", photo: "http://www.utahtrap.com/RON_SELLERS.jpg" },
-  { name: "Arvin Labrum", photo: "http://www.utahtrap.com/ARVIN_LABRUM.jpg" },
-  { name: "Ken Adamson", photo: "http://www.utahtrap.com/KEN_ADAMSON.jpg" },
-  { name: "Ann Christie", photo: "http://www.utahtrap.com/ANN_CHRISTIE.jpg" },
-  { name: "O.J. Coon", photo: "http://www.utahtrap.com/O.J.COON.jpg" },
-  { name: "Josephine Leavitt", photo: "http://www.utahtrap.com/JOSEPHINE_LEAVITT.jpg" },
-  { name: "John M. Browning", photo: "http://www.utahtrap.com/JOHN_M._BROWNING.jpg" },
-  { name: "Tom Lynott", photo: "http://www.utahtrap.com/TOM_LYNOTT.jpg" },
-  { name: "Walter Langhorst", photo: "http://www.utahtrap.com/WALT_LANGHORST.jpg" },
-  { name: "Dean Hurd", photo: "http://www.utahtrap.com/DEAN_HURD.jpg" },
-  { name: "Randy Freston", photo: "http://www.utahtrap.com/RANDY_FRESTON.jpg" },
-  { name: "H. Barr Carlisle", photo: "http://www.utahtrap.com/H._BARR_CARLISLE.jpg" },
-  { name: "Dale Amos", photo: "http://www.utahtrap.com/DALE_AMOS.jpg" },
-  { name: "Ron Christensen", photo: "http://www.utahtrap.com/RON_CHRISTENSEN.jpg" },
-  { name: "Doug Westenskow", photo: "http://www.utahtrap.com/DOUG_WESTENSKOW.jpg" },
-  { name: "Brent Epperson", photo: "http://www.utahtrap.com/BRENT_EPPERSON.jpg" },
-  { name: "Bill Hunter", photo: "http://www.utahtrap.com/WILLIAM__BILL__HUNTER.jpg" },
-  { name: "Jim Duke", photo: "http://www.utahtrap.com/Jim_Duke.jpg" },
-  { name: "Larry Mitchell", photo: "http://www.utahtrap.com/LARRY_MITCHEL.jpg" },
-  { name: "Joe Sudbury Sr.", photo: "http://www.utahtrap.com/publishImages/HOF~~element226.jpg" },
-  { name: "Linda Nicholl", photo: "http://www.utahtrap.com/Shotgun002-web.jpg" },
-  { name: "Joe Mabey", photo: "http://www.utahtrap.com/publishImages/HOF~~element231.jpg" },
-  { name: "Bill Salt", photo: "http://www.utahtrap.com/Shotgun003-web.jpg" },
-  { name: "Bob Spencer", photo: "http://www.utahtrap.com/Scan.jpeg" },
-  { name: "Gene Majers", photo: "http://www.utahtrap.com/gene.jpg" },
-  { name: "Stanley Jorgenson", photo: "http://www.utahtrap.com/publishImages/HOF~~element239.JPG" },
-  { name: "Ardith Stitt", photo: "http://www.utahtrap.com/Ardith.jpg" },
-  { name: "Sharred Oaks", photo: "http://www.utahtrap.com/publishImages/HOF~~element244.jpg" },
-  { name: "Leslie (Ford) Hight", photo: "http://www.utahtrap.com/publishImages/HOF~~element245.jpg" },
+  { name: "Hortense Wood", slug: "hortense-wood", photo: "/inductees/hortense-wood.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Pat Miller", slug: "pat-miller", photo: "/inductees/pat-miller.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Sam Sharman", slug: "sam-sharman", photo: "/inductees/sam-sharman.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "E.L. Ford", slug: "el-ford", photo: "/inductees/el-ford.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "C.H. Reilly", slug: "ch-reilly", photo: "/inductees/ch-reilly.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Gus Becker", slug: "gus-becker", photo: "/inductees/gus-becker.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Ron Sellers", slug: "ron-sellers", photo: "/inductees/ron-sellers.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Arvin Labrum", slug: "arvin-labrum", photo: "/inductees/arvin-labrum.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Ken Adamson", slug: "ken-adamson", photo: "/inductees/ken-adamson.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Ann Christie", slug: "ann-christie", photo: "/inductees/ann-christie.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "O.J. Coon", slug: "oj-coon", photo: "/inductees/oj-coon.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Josephine Leavitt", slug: "josephine-leavitt", photo: "/inductees/josephine-leavitt.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "John M. Browning", slug: "john-browning", photo: "/inductees/john-browning.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Tom Lynott", slug: "tom-lynott", photo: "/inductees/tom-lynott.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Walter Langhorst", slug: "walt-langhorst", photo: "/inductees/walt-langhorst.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Dean Hurd", slug: "dean-hurd", photo: "/inductees/dean-hurd.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Randy Freston", slug: "randy-freston", photo: "/inductees/randy-freston.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "H. Barr Carlisle", slug: "h-barr-carlisle", photo: "/inductees/h-barr-carlisle.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Dale Amos", slug: "dale-amos", photo: "/inductees/dale-amos.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Ron Christensen", slug: "ron-christensen", photo: "/inductees/ron-christensen.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Doug Westenskow", slug: "doug-westenskow", photo: "/inductees/doug-westenskow.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Brent Epperson", slug: "brent-epperson", photo: "/inductees/brent-epperson.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Bill Hunter", slug: "bill-hunter", photo: "/inductees/bill-hunter.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Jim Duke", slug: "jim-duke", photo: "/inductees/jim-duke.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Larry Mitchell", slug: "larry-mitchell", photo: "/inductees/larry-mitchell.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Joe Sudbury Sr.", slug: "joe-sudbury-sr", photo: "/inductees/joe-sudbury-sr.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Linda Nicholl", slug: "linda-nicholl", photo: "/inductees/linda-nicholl.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Joe Mabey", slug: "joe-mabey", photo: "/inductees/joe-mabey.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Bill Salt", slug: "bill-salt", photo: "/inductees/bill-salt.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Bob Spencer", slug: "bob-spencer", photo: "/inductees/bob-spencer.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Gene Majers", slug: "gene-majers", photo: "/inductees/gene-majers.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Stanley Jorgenson", slug: "stanley-jorgenson", photo: "/inductees/stanley-jorgenson.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Bill & LeeAnn Martin", slug: "bill-and-leeann-martin", photo: "/inductees/bill-and-leeann-martin.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Ardith Stitt", slug: "ardith-stitt", photo: "/inductees/ardith-stitt.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Sharred Oaks", slug: "sharred-oaks", photo: "/inductees/sharred-oaks.jpg", year: null, category: null, bio: null, featured: false },
+  { name: "Leslie (Ford) Hight", slug: "leslie-ford-hight", photo: "/inductees/leslie-ford-hight.jpg", year: null, category: null, bio: null, featured: false },
 ];
+
+/** Helper to find an inductee by slug */
+export function getInducteeBySlug(slug: string): Inductee | undefined {
+  return inductees.find((i) => i.slug === slug);
+}
+
+/** Helper to get featured inductees */
+export function getFeaturedInductees(): Inductee[] {
+  return inductees.filter((i) => i.featured);
+}
