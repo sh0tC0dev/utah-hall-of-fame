@@ -1,49 +1,66 @@
-export const dynamic = "force-dynamic";
-
 import Image from "next/image";
-import { Nav } from "./components/Nav";
-import { InducteeGrid } from "./components/InducteeGrid";
+import Link from "next/link";
 import { ScrollReveal } from "./components/ScrollReveal";
+import { SectionDivider } from "./components/SectionDivider";
 import { PersonIcon } from "./components/PersonIcon";
-import { inductees } from "./data";
+import { getFeaturedInductees } from "./data";
 import styles from "./page.module.css";
 
-function SectionDivider() {
-  return (
-    <ScrollReveal>
-      <div className={styles.sectionDivider}>
-        <span className={styles.lineLeft} />
-        <span className={styles.ornament} />
-        <span className={styles.lineRight} />
-      </div>
-    </ScrollReveal>
-  );
-}
+function FeaturedSpotlight() {
+  const featured = getFeaturedInductees();
 
-function SpotlightCard({ delay }: { delay: number }) {
-  return (
-    <ScrollReveal delay={delay}>
-      <div className={styles.spotlightCard}>
-        <div className={styles.spotlightFrame}>
-          <span className={styles.ribbon}>2026</span>
-          <div className={styles.photoPlaceholder}>
-            <PersonIcon size={55} opacity={0.2} />
+  if (featured.length === 0) {
+    return (
+      <div className={styles.spotlightGrid}>
+        <ScrollReveal>
+          <div className={styles.spotlightCard}>
+            <div className={styles.spotlightFrame}>
+              <span className={styles.ribbon}>2026</span>
+              <div className={styles.photoPlaceholder}>
+                <PersonIcon size={55} opacity={0.2} />
+              </div>
+            </div>
+            <p className={styles.spotlightName}>Coming Soon</p>
+            <p className={styles.yearLabel}>Class of 2026</p>
           </div>
-        </div>
-        <p className={styles.spotlightName}>To Be Announced</p>
-        <p className={styles.yearLabel}>Inductee</p>
+        </ScrollReveal>
       </div>
-    </ScrollReveal>
+    );
+  }
+
+  return (
+    <div className={styles.spotlightGrid}>
+      {featured.map((person, i) => (
+        <ScrollReveal key={person.slug} delay={i * 150}>
+          <Link href={`/inductees/${person.slug}`} className={styles.spotlightCardLink}>
+            <div className={styles.spotlightCard}>
+              <div className={styles.spotlightFrame}>
+                <span className={styles.ribbon}>{person.year ?? "2026"}</span>
+                <div className={styles.spotlightPhotoWrap}>
+                  <Image
+                    src={person.photo}
+                    alt={person.name}
+                    fill
+                    sizes="200px"
+                    className={styles.spotlightPhoto}
+                  />
+                </div>
+              </div>
+              <p className={styles.spotlightName}>{person.name}</p>
+              <p className={styles.yearLabel}>Inductee</p>
+            </div>
+          </Link>
+        </ScrollReveal>
+      ))}
+    </div>
   );
 }
 
 export default function HomePage() {
   return (
-    <div className={styles.pageWrapper}>
-      <Nav />
-
+    <div>
       {/* HERO */}
-      <section className={styles.hero} id="top">
+      <section className={styles.hero}>
         <div className={styles.heroInner}>
           <div className={styles.logoFrame}>
             <Image
@@ -71,80 +88,44 @@ export default function HomePage() {
 
       <SectionDivider />
 
-      {/* CLASS OF 2026 */}
-      <section className={styles.spotlight} id="class-2026">
+      {/* FEATURED INDUCTEE SPOTLIGHT */}
+      <section className={styles.spotlight}>
         <ScrollReveal>
           <div className={styles.spotlightHeader}>
             <h2 className={styles.sectionTitle}>Class of 2026</h2>
             <p className={styles.subtitle}>This Year&apos;s Inductees</p>
           </div>
         </ScrollReveal>
-        <div className={styles.spotlightGrid}>
-          <SpotlightCard delay={0} />
-          <SpotlightCard delay={150} />
-          <SpotlightCard delay={300} />
-        </div>
+        <FeaturedSpotlight />
       </section>
 
       <SectionDivider />
 
-      {/* THE HALL */}
-      <section className={styles.hallSection} id="inductees">
+      {/* QUICK LINKS */}
+      <section className={styles.quickLinks}>
         <ScrollReveal>
-          <div className={styles.hallHeader}>
-            <h2 className={styles.sectionTitle}>The Hall</h2>
-            <p className={styles.subtitle}>In Order of Induction</p>
+          <div className={styles.quickLinksGrid}>
+            <Link href="/inductees" className={styles.quickLinkCard}>
+              <h3 className={styles.quickLinkTitle}>View All Inductees</h3>
+              <p className={styles.quickLinkDesc}>
+                Explore the complete Hall of Fame
+              </p>
+            </Link>
+            <Link href="/nominate" className={styles.quickLinkCard}>
+              <h3 className={styles.quickLinkTitle}>Nominate Someone</h3>
+              <p className={styles.quickLinkDesc}>
+                Submit a nomination for consideration
+              </p>
+            </Link>
+            <Link href="/contact?subject=donate" className={styles.quickLinkCard}>
+              <h3 className={styles.quickLinkTitle}>Support the Hall</h3>
+              <p className={styles.quickLinkDesc}>
+                Help preserve Utah&apos;s trapshooting heritage
+              </p>
+            </Link>
           </div>
         </ScrollReveal>
-        <InducteeGrid inductees={inductees} />
       </section>
-
-      <SectionDivider />
-
-      {/* ABOUT */}
-      <ScrollReveal>
-        <section className={styles.aboutSection} id="about">
-          <h2 className={styles.aboutTitle}>About the Hall of Fame</h2>
-          <p className={styles.aboutText}>
-            The Utah Trapshooting Hall of Fame was established to recognize and
-            honor the individuals who have made extraordinary contributions to the
-            sport of trapshooting in Utah &mdash; whether through exceptional
-            competitive achievement, decades of dedicated service, or tireless
-            promotion of the sport we love.
-          </p>
-          <p className={styles.aboutText}>
-            Inductees are selected by the Utah State Trapshooting Association board
-            based on their lasting impact on the Utah trapshooting community. From
-            pioneers who built the foundation of our sport to champions who carried
-            our flag at the highest levels of competition, each member of this Hall
-            represents the best of what it means to be a Utah trapshooter.
-          </p>
-        </section>
-      </ScrollReveal>
-
-      {/* FOOTER */}
-      <ScrollReveal>
-        <footer className={styles.footer}>
-          <Image
-            src="/hof-logo.png"
-            alt=""
-            width={80}
-            height={80}
-            className={styles.footerLogo}
-          />
-          <p className={styles.footerText}>
-            Utah Trapshooting Hall of Fame &middot;{" "}
-            <a
-              href="http://www.utahtrap.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.footerLink}
-            >
-              Utah State Trapshooting Association
-            </a>
-          </p>
-        </footer>
-      </ScrollReveal>
     </div>
   );
 }
