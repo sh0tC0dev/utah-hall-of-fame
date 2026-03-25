@@ -1,0 +1,77 @@
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem 4rem;
+}
+
+.title {
+  font-family: var(--font-playfair);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--color-navy);
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+
+.subtitle {
+  font-family: var(--font-cormorant);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--color-burnt-orange);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.intro {
+  font-family: var(--font-fell);
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--color-text-mid);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  font-style: italic;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: rgba(250, 246, 239, 0.5);
+  border: 1px solid rgba(212, 165, 116, 0.2);
+  transition: border-color 0.3s;
+}
+
+.card:hover {
+  border-color: var(--color-sandstone);
+}
+
+.trusteeName {
+  font-family: var(--font-playfair);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--color-navy);
+  margin-bottom: 0.8rem;
+}
+
+.contactLink {
+  display: block;
+  font-family: var(--font-cormorant);
+  font-size: 0.9rem;
+  color: var(--color-burnt-orange);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.3rem;
+  transition: color 0.3s;
+}
+
+.contactLink:hover {
+  color: var(--color-navy);
+}
