@@ -11,20 +11,31 @@ function FeaturedSpotlight() {
 
   if (featured.length === 0) {
     return (
-      <div className={styles.spotlightGrid}>
-        <ScrollReveal>
-          <div className={styles.spotlightCard}>
-            <div className={styles.spotlightFrame}>
-              <span className={styles.ribbon}>2026</span>
-              <div className={styles.photoPlaceholder}>
-                <PersonIcon size={55} opacity={0.2} />
-              </div>
+      <ScrollReveal>
+        <div className={styles.featuredWrap}>
+          <div className={styles.featuredFrame}>
+            <span className={styles.ribbon}>2026</span>
+            <div className={styles.photoPlaceholder}>
+              <PersonIcon size={80} opacity={0.2} />
             </div>
-            <p className={styles.spotlightName}>Coming Soon</p>
-            <p className={styles.yearLabel}>Class of 2026</p>
           </div>
-        </ScrollReveal>
-      </div>
+          <div className={styles.featuredDetails}>
+            <p className={styles.featuredHonor}>We are honored to welcome</p>
+            <h3 className={styles.featuredName}>Jon Smith</h3>
+            <p className={styles.featuredLabel}>2026 Inductee</p>
+            <p className={styles.featuredBio}>
+              A six-time ATA champion and tireless ambassador for Utah
+              trapshooting, Jon Smith has dedicated over three decades to
+              growing the sport at every level. From mentoring junior
+              shooters to organizing state-level competitions, his impact
+              on the Utah trapshooting community is immeasurable.
+            </p>
+            <Link href="/inductees/hortense-wood" className={styles.featuredBtn}>
+              See Full Bio &rarr;
+            </Link>
+          </div>
+        </div>
+      </ScrollReveal>
     );
   }
 
@@ -32,24 +43,31 @@ function FeaturedSpotlight() {
     <div className={styles.spotlightGrid}>
       {featured.map((person, i) => (
         <ScrollReveal key={person.slug} delay={i * 150}>
-          <Link href={`/inductees/${person.slug}`} className={styles.spotlightCardLink}>
-            <div className={styles.spotlightCard}>
-              <div className={styles.spotlightFrame}>
-                <span className={styles.ribbon}>{person.year ?? "2026"}</span>
-                <div className={styles.spotlightPhotoWrap}>
-                  <Image
-                    src={person.photo}
-                    alt={person.name}
-                    fill
-                    sizes="200px"
-                    className={styles.spotlightPhoto}
-                  />
-                </div>
+          <div className={styles.featuredWrap}>
+            <div className={styles.featuredFrame}>
+              <span className={styles.ribbon}>{person.year ?? "2026"}</span>
+              <div className={styles.spotlightPhotoWrap}>
+                <Image
+                  src={person.photo}
+                  alt={person.name}
+                  fill
+                  sizes="300px"
+                  className={styles.spotlightPhoto}
+                />
               </div>
-              <p className={styles.spotlightName}>{person.name}</p>
-              <p className={styles.yearLabel}>Inductee</p>
             </div>
-          </Link>
+            <div className={styles.featuredDetails}>
+              <p className={styles.featuredHonor}>We are honored to welcome</p>
+              <h3 className={styles.featuredName}>{person.name}</h3>
+              <p className={styles.featuredLabel}>{person.year ?? "2026"} Inductee</p>
+              {person.bio && (
+                <p className={styles.featuredBio}>{person.bio}</p>
+              )}
+              <Link href={`/inductees/${person.slug}`} className={styles.featuredBtn}>
+                See Full Bio &rarr;
+              </Link>
+            </div>
+          </div>
         </ScrollReveal>
       ))}
     </div>
