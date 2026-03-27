@@ -33,7 +33,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/sam-sharman.jpg",
     year: 1997,
     category: "shooting",
-    bio: "Sam Sharman was among Utah's early competitive trapshooters and a recognized figure in the formative years of organized trapshooting in the state. He competed at the Grand American level, finishing as runner-up in the 1921 Grand American Doubles Championship in a shootoff, demonstrating his standing among the nation's top guns of that era.",
+    bio: "Sam Sharman of Salt Lake City shot registered targets from 1922 to 1942 and served as the A.T.A. President in 1936 — the first President from Utah. Sam was the first person in Utah to win the Utah State Singles Championship with a 200×200 in 1929, a record held until 1960. He was the Utah State Singles Champion in 1922, 1923, 1926, 1929, 1931, 1932, and 1934, and also won the Utah Handicap, Doubles, and All Around Championships in 1926, 1931, 1932, 1934, 1935, and 1941. Sam swept all state titles in 1926, 1931, 1932, and 1934. He was a member of the 1931 All American Team and the 1924 Olympic Trap Team.",
     featured: false,
   },
   {
@@ -41,8 +41,8 @@ export const inductees: Inductee[] = [
     slug: "el-ford",
     photo: "/inductees/el-ford.jpg",
     year: 1997,
-    category: null,
-    bio: "E.L. Ford holds a place among the pioneering figures of Utah trapshooting, inducted into the Utah Trapshooting Hall of Fame for contributions to the sport's growth and competitive heritage in the state.",
+    category: "both",
+    bio: "E.L. Ford of Ogden shot registered targets from 1917 to 1935 and served as President of the Utah State Association in 1920. He won the Singles, Handicap, and All Around Championships in 1921, the Singles Championship in 1924, 1925, 1927, and 1930, the Handicap Championship in 1922 and 1933, and the All Around Championship in 1925, 1927, 1930, and 1933.",
     featured: false,
   },
   {
@@ -50,8 +50,8 @@ export const inductees: Inductee[] = [
     slug: "ch-reilly",
     photo: "/inductees/ch-reilly.jpg",
     year: 1997,
-    category: null,
-    bio: "C.H. Reilly is honored in the Utah Trapshooting Hall of Fame among the sport's early contributors and competitors in the state, recognized for helping establish the competitive trapshooting tradition that continues in Utah today.",
+    category: "shooting",
+    bio: "C.H. Reilly of Salt Lake City shot registered targets from 1913 to 1934, winning the Utah State Singles Championship in 1915, 1916, 1917, 1919, and 1920. He also won the Doubles Championship in 1922, 1923, 1924, 1927, and 1929.",
     featured: false,
   },
   {
@@ -60,7 +60,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/gus-becker.jpg",
     year: 1997,
     category: "both",
-    bio: "Ogden's Gustav Becker was recognized during his era as one of the world's premier trapshooters, winning the ATA handicap championship of America and taking state titles including Utah State Champion (1916), St. Joe Valley Champion (1918), and Chesapeake Champion (1930). He served as president of the Ogden Gun Club for over thirty years and held vice-presidential roles in the ATA and the Western Trap Shooting Association, making him as influential an administrator as he was a competitor. Becker represented the United States as an Olympic-level shooter and was later honored in both the Utah Trapshooting Hall of Fame and the Utah Sports Hall of Fame.",
+    bio: "Gus Becker of Ogden shot registered targets from 1914 until 1942. He won the State Singles Title in 1918 and the Handicap Championship in 1918, 1934, and 1936. Gus won the Doubles Championship in 1920, 1921, 1925, 1932, 1933, 1934, and 1936, and also won the All Around Championship in 1936.",
     featured: false,
   },
   {
@@ -68,8 +68,8 @@ export const inductees: Inductee[] = [
     slug: "ron-sellers",
     photo: "/inductees/ron-sellers.jpg",
     year: 1997,
-    category: "administrative",
-    bio: "Ronald Sellers of Bountiful, Utah, has dedicated himself to preserving and promoting the history of Utah trapshooting, serving as the director of the Utah Trapshooting Hall of Fame. A competitive shooter in his own right, he has been a steadfast ambassador for the sport, bringing a traveling trapshooting museum to state championship events to share the heritage of the game with the broader Utah shooting community.",
+    category: "shooting",
+    bio: "Ron Sellers of Bountiful has shot registered targets since 1959 and is still shooting. Ron was the first person to tie the record set by Sam Sharman in 1929 by shooting 200×200 to win the State Singles Championship, and also tied a record set by C.H. Reilly in 1929 to win the State Doubles Championship in 1971. He won the Singles Championship in 1960 and 1965, the Doubles Championship in 1969, 1971, 1973, 1974, and 1975, and the State All Around Championship in 1969, 1975, 1981, and 1983. Ron is the only person to break 100×100 from each full yardage marker from the 21 to the 27 in both ATA and PITA firing. He made the ATA All American Team from 1971 to 1975, with 1973 on the 2nd team and all others on the 1st team.",
     featured: false,
   },
   {
@@ -123,7 +123,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/john-browning.jpg",
     year: 1999,
     category: "both",
-    bio: "Born January 23, 1855, in Ogden, Utah, John Moses Browning is widely regarded as the greatest firearms inventor the world has ever known, holding 128 patents and designing weapons that ranged from single-shot rifles to the Auto-5 — the world's first semi-automatic shotgun and a mainstay of the trapshooting community for generations. A dedicated competitive shooter himself, Browning was a member of the celebrated \"Four B's\" live bird trapshooting team alongside his brother Matthew, Gus Becker, and A.P. Bigelow, and regularly tested his shotgun designs in competitions around Ogden. His genius transformed not only the firearms industry but the clay target sports that Utah trapshooters have competed in ever since. Browning passed away in 1926, leaving a legacy inseparable from the history of the sport in his home state.",
+    bio: "John M. Browning of Morgan is being inducted for obvious reasons — the list of guns he invented during the last quarter of the 19th century and continuing through the first quarter of the 20th defies belief: the Model 1894 lever action rifle, the Model 1897 pump shotgun, the .22 caliber pump and single-shot rifles, as well as rifles, handguns (the Colt 45 is a Browning invention), machine guns, cannons, and antiaircraft guns for other arms companies and the U.S. military. In 1883 he was approached by Winchester Repeating Arms Company, and for the next 19 years designed guns for Winchester that made them the largest producer of sporting arms in the U.S. It was during this time that Browning designed the Auto-Five, the first gas-operated automatic shotgun. Since its invention in 1899, the Browning A-5 is still in production and to date has sold more than 1.25 million under the Fabrique name alone and untold tens of thousands under the name of Remington, Franchi, Beda, Save, and others.",
     featured: false,
   },
   {
@@ -132,7 +132,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/tom-lynott.jpg",
     year: 1999,
     category: "shooting",
-    bio: "Tom Lynott was one of Utah's most decorated competitive trapshooters of the mid-twentieth century, compiling an impressive record across Singles, Doubles, and High-Overall events spanning more than two decades. Among his notable achievements: a 200-straight in Singles at Salt Lake City in 1949, High Overall Average at the 1953 Rocky Mountain Oyster shoot, doubles titles in 1953, 1955, and 1961, and a 98 from the 27-yard line at the 1956 Calgary Canadian Championship. Renowned as much for his mentorship as his marksmanship, Lynott was inducted into both the Utah and the national Trapshooting Hall of Fame. A decorated World War II B-24 bombardier, he was also made an honorary member of the Shoshone Nation's \"High Chief Thundering Gun\" society.",
+    bio: "Tom Lynott of Salt Lake City worked for Winchester Ammunition. He was second among pros in the Grand American Class Singles in 1954, tied in the Dayton Homecoming in 1956, and in 1958 was first among the pros in the Class Championship. In 1960 Tom won the Dayton Homecoming. He was on the Professional All American Team in 1949, 1951 through 1961, 1965, 1966, and 1967.",
     featured: false,
   },
   {
@@ -140,8 +140,8 @@ export const inductees: Inductee[] = [
     slug: "walt-langhorst",
     photo: "/inductees/walt-langhorst.jpg",
     year: 1999,
-    category: null,
-    bio: "Walter \"Walt\" Langhorst was a respected figure in Utah's trapshooting community whose contributions to the sport earned him a place among the state's most honored inductees in the Utah Trapshooting Hall of Fame.",
+    category: "shooting",
+    bio: "Walter Langhorst of Salt Lake City was the district manager for Remington Arms Co. and began registering targets in 1954. That same year he won Professional Doubles honors at the Baby Grand in Elko, Nevada. He entered his first 100 straight in Phoenix five years later and earned the Professional prize in the 1962 Golden West Grand Doubles Championship. Mr. Langhorst was the Professional Runner-up in the 1965 Grand American Singles Class Championship and was the Grand American Professional Doubles and Clay Target Champion in 1968. Walt was named to the Professional All American Team each year from 1966 through 1969.",
     featured: false,
   },
   {
@@ -168,7 +168,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/h-barr-carlisle.jpg",
     year: 2001,
     category: null,
-    bio: "Harvey Barr Carlisle was a Salt Lake City trapshooter whose place in the Utah Trapshooting Hall of Fame reflects a life devoted to the sport during a formative era for organized trapshooting in the state.",
+    bio: "H. Barr Carlisle of Salt Lake City won the Utah State Doubles Championship in 1936 and the Handicap Championship in 1942. Barr, as he was called, was State President of the PITA in 1936. He won the PITA Doubles Championship in 1939, 1940, 1941, 1950, and 1959, was the PITA Utah Handicap Champion in 1939, 1941, and 1950, as well as Utah PITA Singles Champion in 1955 and 1957 and the All Around Champion in 1941 and 1950.",
     featured: false,
   },
   {
@@ -177,7 +177,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/dale-amos.jpg",
     year: 2001,
     category: "shooting",
-    bio: "Dale Amos stands as one of Utah's most distinguished competitive trapshooters, holding the Utah State Trapshooting Association's record for the highest handicap average — a benchmark of sustained precision few competitors have approached. A long-tenured ATA registered shooter, Amos has accumulated tens of thousands of registered targets across all three disciplines and has been a central figure in Utah's competitive trapshooting community for decades.",
+    bio: "Dale Amos of Spanish Fork has been the Utah State All Around Champion eight times: 1978, 1979, 1984, 1986, 1987, 1989, 1992, and 1993. He won the State Singles Championship in 1980, 1986, 1989, and 1993, the Handicap Championship in 1992, 1993, and 2000, and the Doubles Championship in 1979, 1986, 1988, and 1992. Amos won AA 3rd for the Singles Championship at the 1980 Grand American and was a member of the 1986 Men's All American 2nd Team. Dale was the 2000 Western Zone Handicap Champion with 100 straight.",
     featured: false,
   },
   {
@@ -185,8 +185,8 @@ export const inductees: Inductee[] = [
     slug: "ron-christensen",
     photo: "/inductees/ron-christensen.jpg",
     year: 2001,
-    category: null,
-    bio: "Ron Christensen was a fixture in Utah's competitive trapshooting community, known for his steady presence both on the firing line and behind the scenes at ATA-registered events. A member of a core group of Utah shooters who helped shape the state's trapshooting culture, Christensen competed at the registered level and maintained his connection to the sport throughout his career.",
+    category: "both",
+    bio: "Ron Christensen of Goshen held the Utah State Doubles Championship in 1985 and 1994, the Singles Championship in 1991, and the Handicap Championship in 1996. He was the Utah State High All Around and High Over All Champion in 1989. Ron won AAA Doubles at the Grand American in 1997, the first year of the AAA class. He won the Western Grand Handicap Championship in 1995 and the Doubles Championship in 1988 and 1994, the Golden West Grand Doubles Championship in 1994 and 1998, and the High All Around trophy in 1994. He also won the 1986 Doubles Championship at the Spring Grand. Ron was a member of the Men's All American 2nd Team in 1986, 1990, 1992, 1997, and 1998. A past president of the Utah State Association, Ron was appointed to form the Utah Trapshooting Hall of Fame Committee in 1995, formally submitted the outline for approval in 1996, and conducted the first inductions in 1997.",
     featured: false,
   },
   {
@@ -194,8 +194,8 @@ export const inductees: Inductee[] = [
     slug: "doug-westenskow",
     photo: "/inductees/doug-westenskow.jpg",
     year: 2002,
-    category: null,
-    bio: "Doug Westenskow is recognized by the Utah State Trapshooting Association as a contributor of lasting significance to the sport in Utah, earning a place among the state's most honored competitors and supporters in the Hall of Fame.",
+    category: "shooting",
+    bio: "Douglas Westenskow of Salt Lake City won the Utah State Doubles Championship in 1958, 1962, and 1963 and was the Doubles Runnerup in 1970. Doug won the Utah State High Over All Trophy in 1959 and 1963. His lifetime target attainment is 31,910 for Singles, 32,825 for Handicap, and 17,150 for Doubles.",
     featured: false,
   },
   {
@@ -204,7 +204,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/brent-epperson.jpg",
     year: 2004,
     category: "both",
-    bio: "Brent Epperson has served the sport of trapshooting at both the competitive and organizational levels throughout his career in Utah. He was appointed as the Utah State ATA Delegate to the Western Zone, representing the interests of Utah shooters within the national governing structure of the Amateur Trapshooting Association. As a competitor, Epperson earned recognition in veteran class competition, including a veteran division doubles title. His dual role as administrator and active shooter exemplifies the kind of dedication the Utah Hall of Fame honors.",
+    bio: "Brent Epperson of Centerville won the Utah State Handicap Championship in 2001 and 2002 and the Doubles Championship in 2003. Brent won the Utah State High All Around Trophy in 2000 and 2002. He also won 6 trophies at the Grand American as well as the Western Grand Handicap Championship in 2003 and the Western Zone Singles Championship in 2001. Mr. Epperson made the 2003 Men's All American First Team and the 2004 All American Second Team.",
     featured: false,
   },
   {
@@ -212,8 +212,8 @@ export const inductees: Inductee[] = [
     slug: "bill-hunter",
     photo: "/inductees/bill-hunter.jpg",
     year: 2004,
-    category: null,
-    bio: "Bill Hunter is honored by the Utah State Trapshooting Association as one of the figures who helped build and sustain the sport within the state. His contributions — whether through competitive shooting, volunteer service, or community support at Utah gun clubs — left a lasting impression on the trapshooters who came up around him.",
+    category: "administrative",
+    bio: "Bill Hunter of Carson, California is being inducted into the Utah Trapshooting Hall of Fame as an Honorary Member on his merits as a contributor and supporter of trapshooting worldwide. Whenever he sees a need, Bill has always tried to fill it — from supplying free doughnuts and coffee at gun clubs, to giving parties in honor of trap help, furnishing trophies and awards for shoots, or donating to the Trapshooting Hall of Fame or the Capital Improvement Fund. For many years, Mr. Hunter donated 100 life memberships per year to be given at every state and provincial shoot plus the Satellite Grands and the Grand American.",
     featured: false,
   },
   {
@@ -293,8 +293,8 @@ export const inductees: Inductee[] = [
     slug: "stanley-jorgenson",
     photo: "/inductees/stanley-jorgenson.jpg",
     year: 2001,
-    category: null,
-    bio: "Stanley Jorgenson is honored in the Utah Trapshooting Hall of Fame for his contributions to the sport within the state of Utah.",
+    category: "shooting",
+    bio: "Stanley Jorgenson of Salt Lake City started registering targets in 1964 and had his first 100 straight in singles in 1965. Stan won the Utah State High All Around in 1966 and 1967 and was also the High Over All Champion in 1966 as well as the A class Singles Champion. He was the PITA State Handicap Champion in 1965 as well as the 1966 PITA State Handicap Champion and All Around Champion. In 1966, Stan had the high average in singles, handicap, and doubles and repeated the accomplishment again in 1967 for singles and doubles.",
     featured: false,
   },
   {
