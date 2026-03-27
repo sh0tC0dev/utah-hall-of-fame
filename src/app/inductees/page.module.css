@@ -20,3 +20,141 @@
   letter-spacing: 0.28em;
   text-transform: uppercase;
 }
+
+/* ═══════════════════ CLASS OF 2026 HIGHLIGHT ═══════════════════ */
+.featuredSection {
+  padding: 1rem 2rem 3rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(212, 165, 116, 0.25);
+  margin-bottom: 2rem;
+}
+
+.featuredTitle {
+  font-family: var(--font-playfair);
+  font-weight: 800;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  color: var(--color-navy);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+}
+
+.featuredSubtitle {
+  font-family: var(--font-cormorant);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-burnt-orange);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.featuredGrid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.featuredCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s;
+}
+
+.featuredCard:hover {
+  transform: translateY(-5px);
+}
+
+.featuredFrame {
+  position: relative;
+  width: 200px;
+  height: 250px;
+  margin-bottom: 1rem;
+  background: linear-gradient(145deg,
+    var(--color-sandstone-light) 0%,
+    var(--color-sandstone) 20%,
+    var(--color-sandstone-dark) 50%,
+    var(--color-sandstone) 80%,
+    var(--color-sandstone-light) 100%
+  );
+  border: 1px solid rgba(42, 30, 20, 0.15);
+  box-shadow:
+    0 6px 24px rgba(42, 30, 20, 0.2),
+    0 2px 8px rgba(42, 30, 20, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.featuredPhotoWrap {
+  position: absolute;
+  inset: 12px;
+  background: var(--color-parchment-dark);
+  overflow: hidden;
+  box-shadow: inset 0 1px 4px rgba(42, 30, 20, 0.15);
+}
+
+.featuredPhoto {
+  object-fit: cover;
+  filter: sepia(0.15) contrast(1.05) brightness(0.95) saturate(0.85);
+  transition: filter 0.4s;
+}
+
+.featuredCard:hover .featuredPhoto {
+  filter: sepia(0.05) contrast(1.08) brightness(1) saturate(0.95);
+}
+
+.featuredNameplate {
+  display: inline-block;
+  background: linear-gradient(180deg,
+    #e5cc82 0%,
+    #dcc07a 15%,
+    #c9a84c 50%,
+    #b89438 85%,
+    #a88530 100%
+  );
+  padding: 0.4rem 1.2rem 0.35rem;
+  border-radius: 1px;
+  box-shadow:
+    0 2px 5px rgba(42, 30, 20, 0.25),
+    0 1px 2px rgba(42, 30, 20, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+}
+
+.featuredName {
+  font-family: var(--font-cormorant);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--color-warm-black);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.2),
+    0 -1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.featuredYear {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: var(--font-cormorant);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--color-burnt-orange);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .featuredGrid {
+    gap: 2rem;
+  }
+  .featuredFrame {
+    width: 160px;
+    height: 200px;
+  }
+}

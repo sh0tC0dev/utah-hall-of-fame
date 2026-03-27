@@ -185,9 +185,9 @@
 
 .spotlightGrid {
   display: flex;
-  justify-content: center;
-  gap: 3rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
   max-width: 900px;
   margin: 0 auto;
 }

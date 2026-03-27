@@ -31,7 +31,7 @@ function InducteePhoto({ src, alt }: { src: string; alt: string }) {
 }
 
 export function InducteeBrowser({ inductees }: { inductees: Inductee[] }) {
-  const [sort, setSort] = useState<SortMode>("alpha");
+  const [sort, setSort] = useState<SortMode>("year");
   const [search, setSearch] = useState("");
 
   const filtered = useMemo(() => {
