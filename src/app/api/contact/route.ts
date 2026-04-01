@@ -1,7 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const CONTACT_EMAIL = process.env.CONTACT_EMAIL ?? "ed.wehking@comcast.net";
+const CONTACT_EMAILS = [
+  "ed.wehking@comcast.net",
+  "John.vosnos@yahoo.com",
+];
 
 export async function POST(req: NextRequest) {
   try {
@@ -14,7 +17,7 @@ export async function POST(req: NextRequest) {
 
     await resend.emails.send({
       from: "Utah HOF <onboarding@resend.dev>",
-      to: CONTACT_EMAIL,
+      to: CONTACT_EMAILS,
       replyTo: email,
       subject: `Contact: ${subject || "General Inquiry"}`,
       text: `From: ${name} (${email})\nSubject: ${subject || "General Inquiry"}\n\n${message}`,

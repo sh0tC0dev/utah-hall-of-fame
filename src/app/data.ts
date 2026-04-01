@@ -15,7 +15,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/hortense-wood.jpg",
     year: 1986,
     category: "both",
-    bio: "One of the most decorated female trapshooters in ATA history, Hortense Wood began her shooting career in Utah around 1940 and went on to claim 19 Utah women's state championships along with one doubles and one all-around title over the men. She placed on 24 women's ATA All-America teams — 20 of them first-team honors — and in 1970 became only the second woman in ATA history to be handicapped at 27 yards, the maximum distance. A trailblazer off the range as well, she served as president of the Salt Lake Gun Club from 1960 to 1962, becoming the first woman to head a major gun club in the country.",
+    bio: "One of the most decorated female trapshooters in ATA history, Hortense Wood began her shooting career in Utah around 1940 and went on to claim 19 Utah women's state championships along with one doubles and one all-around title over the men. She was Ladies' Singles Champion 18 times, Doubles Open Champion in 1967, and HAA Open Champion in 1955. She placed on 24 women's ATA All-America teams — 20 of them first-team honors — and in 1970 became only the second woman in ATA history to be handicapped at 27 yards, the maximum distance. A trailblazer off the range as well, she served as president of the Salt Lake Gun Club from 1960 to 1962, becoming the first woman to head a major gun club in the country.",
     featured: false,
   },
   {
@@ -24,7 +24,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/pat-miller.jpg",
     year: 1986,
     category: null,
-    bio: "Pat Miller is recognized among the foundational figures of Utah trapshooting, honored as one of the early inductees in the Utah Trapshooting Hall of Fame for sustained contributions to the sport and competition within the state.",
+    bio: "Pat Miller competed during the 1950s and 1960s and is recognized among the foundational figures of Utah trapshooting. He won three State Singles titles, two Doubles titles, one Handicap title, six HAA titles, and one HOA title in 1961. Pat was honored as one of the early inductees in the Utah Trapshooting Hall of Fame for sustained contributions to the sport and competition within the state.",
     featured: false,
   },
   {
@@ -78,7 +78,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/arvin-labrum.jpg",
     year: 1998,
     category: "shooting",
-    bio: "Arvin G. Labrum (1932–2017) of the Uintah Basin was a dedicated and accomplished trapshooter who earned numerous awards in singles and doubles competition throughout his career. Inducted into the Utah Trapshooting Hall of Fame in 2003, Labrum famously flew himself to competitions across the United States in his own Beechcraft Bonanza aircraft, piloting a course that combined his two great passions — the skies and the clay target field.",
+    bio: "Arvin G. Labrum (1932–2017) of the Uintah Basin competed from the early 1960s through 2000. He won the State Singles title once, Doubles four times, and HAA once. A dedicated and accomplished trapshooter, Labrum famously flew himself to competitions across the United States in his own Beechcraft Bonanza aircraft, piloting a course that combined his two great passions — the skies and the clay target field.",
     featured: false,
   },
   {
@@ -87,7 +87,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/ken-adamson.jpg",
     year: 1998,
     category: null,
-    bio: "Ken Adamson is recognized as one of Utah's distinguished contributors to the sport of trapshooting, honored among the inductees of the Utah State Trapshooting Association's Hall of Fame for a career of sustained competitive excellence and commitment to the sport within the state.",
+    bio: "Ken Adamson competed from the mid-1960s through 2000. He won the State Singles title six times, the HAA title four times, and the HOA title once. Ken is recognized as one of Utah's distinguished contributors to the sport of trapshooting, honored among the inductees of the Utah State Trapshooting Association's Hall of Fame for a career of sustained competitive excellence and commitment to the sport within the state.",
     featured: false,
   },
   {
@@ -96,7 +96,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/ann-christie.jpg",
     year: 1998,
     category: null,
-    bio: "Ann Christie is honored as a trailblazer in Utah trapshooting, recognized among the inductees of the Utah State Trapshooting Association's Hall of Fame. Her induction reflects both competitive achievement and a meaningful contribution to the growth of the sport in Utah, particularly for women in the shooting sports community.",
+    bio: "Ann Christie was active in the early 1950s. She won the Open Handicap Championship in both 1951 and 1952, and also won the Ladies' Singles Title in those same two years. Ann is honored as a trailblazer in Utah trapshooting, recognized among the inductees of the Utah State Trapshooting Association's Hall of Fame for both competitive achievement and a meaningful contribution to the growth of the sport in Utah, particularly for women in the shooting sports community.",
     featured: false,
   },
   {
@@ -114,7 +114,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/josephine-leavitt.jpg",
     year: 1998,
     category: "shooting",
-    bio: "Josephine \"Jody\" Leavitt Jorgensen (1927–2023) of Kaysville and later St. George, Utah, was a multi-sport competitor who distinguished herself as an accomplished trapshooter alongside careers in bowling and golf. She earned numerous awards and accolades throughout her long life, and her competitive spirit and longevity in the sport made her an enduring example for women trapshooters across the state.",
+    bio: "Josephine \"Jody\" Leavitt Jorgensen (1927–2023) of Kaysville and later St. George, Utah, competed in the early 1960s and won the Ladies Singles title in 1962. A multi-sport competitor, she distinguished herself as an accomplished trapshooter alongside careers in bowling and golf. She earned numerous awards and accolades throughout her long life, and her competitive spirit and longevity in the sport made her an enduring example for women trapshooters across the state.",
     featured: false,
   },
   {
@@ -150,7 +150,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/dean-hurd.jpg",
     year: 2000,
     category: null,
-    bio: "Dean Hurd was a recognized competitor and contributor to Utah trapshooting who earned induction into the Utah State Trapshooting Association's Hall of Fame for his accomplishments in the sport.",
+    bio: "Dean Hurd competed from 1936 to 1950. He won three State Singles titles, one Doubles title, and four HAA titles. Dean was a recognized competitor and contributor to Utah trapshooting who earned induction into the Utah State Trapshooting Association's Hall of Fame for his accomplishments in the sport.",
     featured: false,
   },
   {
@@ -231,7 +231,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/larry-mitchell.jpg",
     year: 2009,
     category: null,
-    bio: "Larry Mitchell is a recognized figure within the Utah trapshooting community, honored by the Utah State Trapshooting Association for his contributions to the sport in the state. His induction into the Utah Trapshooting Hall of Fame reflects a career and legacy deemed worthy of the sport's highest state honor.",
+    bio: "Larry Mitchell managed the Salt Lake Gun Club for at least 30 years and played a key role in starting the Lee Kay Shotgun Center. He also founded the popular Utah State Round Robin Tournament. Larry owned several clay target companies, including Meteor. His wife Sheena and son Storm were also champion Utah trapshooters. Larry won the State Handicap title in 1990. His induction into the Utah Trapshooting Hall of Fame reflects a career and legacy deemed worthy of the sport's highest state honor.",
     featured: false,
   },
   {
@@ -240,7 +240,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/joe-sudbury-sr.jpg",
     year: 2012,
     category: "shooting",
-    bio: "Joe Sudbury Sr. is one of Utah's most accomplished registered trapshooters, celebrated for a competitive career marked by consistency and longevity. At the 2017 Utah State Shoot, he won the Singles Championship outright with a 200 straight, remarkably having broken all 500 singles targets across the entire week of competition. He continued to compete at the highest level into his senior veteran years, earning ATA Senior Veteran Second Team All-American honors. His dedication to registered competition over multiple decades makes him one of the most respected names in Utah trapshooting.",
+    bio: "Active since the early 1980s, Joe Sudbury Sr. is one of Utah's most accomplished registered trapshooters, celebrated for a competitive career marked by consistency and longevity. His Open titles include Singles five times, Doubles once, HAA four times, and HOA six times, along with numerous Veteran and Senior Vet Singles, Doubles, Handicap, HAA, HOA, and several Zone titles and Satellite Grand titles. At the 2017 Utah State Shoot, he won the Singles Championship outright with a 200 straight, remarkably having broken all 500 singles targets across the entire week of competition. He continued to compete at the highest level into his senior veteran years, earning ATA Senior Veteran Second Team All-American honors. His dedication to registered competition over multiple decades makes him one of the most respected names in Utah trapshooting.",
     featured: false,
   },
   {
@@ -249,7 +249,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/linda-nicholl.jpg",
     year: 2010,
     category: null,
-    bio: "Linda Nicholl is recognized among a select group of women who helped shape competitive trapshooting in Utah. Her induction into the Utah Trapshooting Hall of Fame speaks to a career of sustained participation and achievement within the state's shooting community, contributing to the growth of women's competition in registered ATA events.",
+    bio: "Linda Nicholl competed in the late 1970s and early 1980s. She won five Ladies' Singles titles and several Ladies' Handicap and Doubles titles. Linda was also a skilled skeet shooter. Her induction into the Utah Trapshooting Hall of Fame speaks to a career of sustained participation and achievement within the state's shooting community, contributing to the growth of women's competition in registered ATA events.",
     featured: false,
   },
   {
@@ -258,7 +258,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/joe-mabey.jpg",
     year: 2010,
     category: null,
-    bio: "Joe Mabey is enshrined in the Utah Trapshooting Hall of Fame in recognition of his contributions to the sport within the state, reflecting a legacy of dedication to the trapshooting community that the association deemed worthy of permanent recognition.",
+    bio: "Joe Mabey competed in the early 1950s and won the State Singles title once, Doubles three times, and HAA twice. He is enshrined in the Utah Trapshooting Hall of Fame in recognition of his contributions to the sport within the state, reflecting a legacy of dedication to the trapshooting community that the association deemed worthy of permanent recognition.",
     featured: false,
   },
   {
@@ -267,7 +267,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/bill-salt.jpg",
     year: 2012,
     category: "shooting",
-    bio: "Bill Salt earned his place among Utah's trapshooting elite through sustained excellence at the national level, earning selection to the ATA All-American Men's First Team in 1962 — a distinction that placed him among the finest registered competitors in the country. Competing during an era when Utah trapshooting was still building its stature on the national stage, Salt's achievement brought recognition to the state association and served as a benchmark for future generations of Utah shooters.",
+    bio: "Bill Salt earned his place among Utah's trapshooting elite through sustained excellence at the national level, earning selection to the ATA All-American Men's First Team in 1962 — a distinction that placed him among the finest registered competitors in the country. Bill also won the Utah State Doubles title in 1960. Competing during an era when Utah trapshooting was still building its stature on the national stage, Salt's achievement brought recognition to the state association and served as a benchmark for future generations of Utah shooters.",
     featured: false,
   },
   {
@@ -276,7 +276,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/bob-spencer.jpg",
     year: 2013,
     category: null,
-    bio: "Bob Spencer is a Hall of Fame inductee of the Utah State Trapshooting Association, recognized for his contributions to the state's trapshooting community through competition, service, or both.",
+    bio: "Bob Spencer competed in the late 1980s and early 1990s. He won four Senior Vet Singles titles, as well as Handicap and Doubles events. Bob is a Hall of Fame inductee of the Utah State Trapshooting Association, recognized for his contributions to the state's trapshooting community through competition and service.",
     featured: false,
   },
   {
@@ -285,7 +285,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/gene-majers.jpg",
     year: 2015,
     category: "shooting",
-    bio: "Gene Majers is a Utah-based ATA competitor recognized for his performance in the veteran category of registered trapshooting and his longevity as a competitive shooter in the state. His induction into the Utah Trapshooting Hall of Fame honors a career of sustained dedication to the sport.",
+    bio: "Gene Majers is a Utah-based ATA competitor recognized for his performance in the veteran category of registered trapshooting and his longevity as a competitive shooter in the state. Gene won the State Singles title in 2008 and has also earned several Senior Vet Singles, Handicap, and Doubles titles. His induction into the Utah Trapshooting Hall of Fame honors a career of sustained dedication to the sport.",
     featured: false,
   },
   {
@@ -321,7 +321,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/sharred-oaks.jpg",
     year: 2019,
     category: "shooting",
-    bio: "Sharred Oaks of Vernal, Utah is one of the most accomplished young trapshooters the state has ever produced, becoming the youngest inductee in the Utah Trapshooting Hall of Fame at just 19 years of age. A member of the Vernal Rod & Gun Club — the oldest private trapshooting club in Utah — Sharred posted a rare 100-straight in all three events at a single registered shoot and capped his ATA Grand Slam with a perfect 300×300 performance from the 27-yard line. At the 2017 Utah State Shoot he won both the all-around and high-over-all titles, and at the Grand American he claimed junior honors in the NRA Singles with a 200 and won the junior doubles championship with a perfect 100.",
+    bio: "Sharred Oaks of Vernal, Utah is one of the most accomplished young trapshooters the state has ever produced, becoming the youngest inductee in the Utah Trapshooting Hall of Fame at just 19 years of age. A member of the Vernal Rod & Gun Club — the oldest private trapshooting club in Utah — Sharred posted a rare 100-straight in all three events at a single registered shoot and capped his ATA Grand Slam with a perfect 300×300 performance from the 27-yard line. He has won the Utah State Singles title two times, Doubles title four times, HAA two times, and HOA three times. At the 2017 Utah State Shoot he won both the all-around and high-over-all titles, and at the Grand American he claimed junior honors in the NRA Singles with a 200 and won the junior doubles championship with a perfect 100.",
     featured: false,
   },
   {
@@ -329,8 +329,8 @@ export const inductees: Inductee[] = [
     slug: "joe-roach",
     photo: "/inductees/joe-roach.png",
     year: 2017,
-    category: null,
-    bio: null,
+    category: "shooting",
+    bio: "Active from the 1980s through 2020, Joe has been a key figure in Utah shooting for many years. He has won the State Handicap Championship, Doubles, Open HAA, and Vet Singles each once, along with many Veteran doubles and handicap championships.",
     featured: false,
   },
   {
@@ -339,7 +339,7 @@ export const inductees: Inductee[] = [
     photo: "/inductees/leslie-ford-hight.jpg",
     year: 2016,
     category: "shooting",
-    bio: "Leslie Ford Hight is a long-standing competitor in Utah's ATA trapshooting community, competing primarily through the Spanish Fork Gun Club. She has been recognized for sustained performance in women's competition, reflecting decades of consistent competitive excellence at the registered level.",
+    bio: "Active since the early 2000s through the present, Leslie Ford Hight is a long-standing competitor in Utah's ATA trapshooting community, competing primarily through the Spanish Fork Gun Club. Leslie has won the Ladies State Singles title eight times, along with several Ladies handicap and doubles titles. She has been recognized for sustained performance in women's competition, reflecting decades of consistent competitive excellence at the registered level.",
     featured: false,
   },
   {
@@ -347,17 +347,17 @@ export const inductees: Inductee[] = [
     slug: "pam-wright",
     photo: "/inductees/pam-wright.jpg",
     year: 2026,
-    category: null,
-    bio: null,
+    category: "shooting",
+    bio: "Pam has won many Utah State Lady I and II Championships, as well as several Western Zone, Western Grand, and Grand American trophies. She has been a member of the Utah State Trap Shooting Association's Ladies Team for 15 straight years, from 2001 to 2025, serving as team captain for three of those years. Pam has been named to the ATA All-American Lady 2 First Team five years in a row, qualifying as an All-American Lady II Team member in 2025, 2024, 2023, 2022, and 2021. Pam got her start in trapshooting by practicing with her brother Doug Ford, some of the boys, and Leslie Hight. Doug remembers that he and Pam would shoot together from time to time before he slowed down. He says, \"She's a fierce competitor. When she sets her mind to something, she does it.\" He also adds, \"She's always willing to help with anything.\"",
     featured: true,
   },
   {
     name: "Pauline Deleeuw",
     slug: "pauline-deleeuw",
-    photo: "/inductees/pauline-deleeuw.png",
+    photo: "/inductees/pauline-deleeuw.jpg",
     year: 2026,
-    category: null,
-    bio: null,
+    category: "both",
+    bio: "Pauline is known for winning multiple High Lady singles titles at the Utah State Shoot. She is the only woman in the event's history, from 1914 to 2025, to shoot a perfect 200 in the singles championship. Her achievements include High Lady Handicap at the 1978 Utah State Shoot, Singles High Lady I in 1984, 1987, 1992, and 1995, and Handicap High Lady I in 1987. To date she is the only lady to run 200 straight in the Utah State singles championship. Pauline also served as Secretary of the Magna Gun Club, sat on its Board of Directors, and helped organize the first Utah Cancer \"Shoot Out\" at Lee Kay Shooting Complex. She made a significant voluntary contribution helping run Magna Gun Club from inception to closure. Pauline began shooting in 1975 and retired in 2000 due to health reasons. Even at 91, she would still love to be on the range. Over her 25-year career, she shot 22,000 singles, 18,200 handicap, and 1,700 doubles targets.",
     featured: true,
   },
   {
@@ -365,8 +365,8 @@ export const inductees: Inductee[] = [
     slug: "sean-hawley",
     photo: "/inductees/sean-hawley.jpg",
     year: 2026,
-    category: null,
-    bio: null,
+    category: "shooting",
+    bio: "Sean has been a lifetime member of the ATA since joining in 1981 at age 12. His best singles average is 99.68%, his top handicap average is 96.52%, and his highest doubles average is 99.67%. Sean has won several Utah Championships: Singles once, Handicap twice, Doubles once, HOA six times, and HAA five times. He has also earned many Satellite Grand Championships and Grand American Trophies, including the coveted HOA ring at the Grand American. Sean has been named to the ATA All-American team 31 times: once as a sub-junior, three times as a junior, and 27 times on the First and Second Open Teams. He has been on the team for 19 straight years, from 2007 to 2025.",
     featured: true,
   },
 ];

@@ -8,6 +8,7 @@ const links = [
   { href: "/", label: "Home" },
   { href: "/inductees", label: "Inductees" },
   { href: "/eligibility", label: "Eligibility" },
+  { href: "/scholarship", label: "Scholarship" },
   { href: "/nominate", label: "Nominate" },
   { href: "/trustees", label: "Trustees" },
   { href: "/contact", label: "Contact" },

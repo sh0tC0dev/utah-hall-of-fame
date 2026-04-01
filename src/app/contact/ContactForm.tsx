@@ -19,6 +19,8 @@ export function ContactForm() {
     const s = searchParams.get("subject");
     if (s === "donate") {
       setSubject("I'd like to donate");
+    } else if (s === "scholarship") {
+      setSubject("Interested in Youth Scholarship");
     }
   }, [searchParams]);
 

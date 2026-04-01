@@ -91,7 +91,7 @@ export default function HomePage() {
             />
           </div>
           <div className={styles.heroTextSide}>
-            <p className={styles.heroPreTitle}>Utah State Trapshooting</p>
+            <p className={styles.heroPreTitle}>Utah Trapshooting</p>
             <h1 className={styles.heroTitle}>Hall of Fame</h1>
             <div className={styles.heroRule} />
             <p className={styles.est}>Honoring Utah&apos;s Finest</p>
