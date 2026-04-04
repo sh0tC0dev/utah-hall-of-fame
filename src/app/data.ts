@@ -343,15 +343,6 @@ export const inductees: Inductee[] = [
     featured: false,
   },
   {
-    name: "Pam Wright",
-    slug: "pam-wright",
-    photo: "/inductees/pam-wright.jpg",
-    year: 2026,
-    category: "shooting",
-    bio: "Pam has won many Utah State Lady I and II Championships, as well as several Western Zone, Western Grand, and Grand American trophies. She has been a member of the Utah State Trap Shooting Association's Ladies Team for 15 straight years, from 2001 to 2025, serving as team captain for three of those years. Pam has been named to the ATA All-American Lady 2 First Team five years in a row, qualifying as an All-American Lady II Team member in 2025, 2024, 2023, 2022, and 2021. Pam got her start in trapshooting by practicing with her brother Doug Ford, some of the boys, and Leslie Hight. Doug remembers that he and Pam would shoot together from time to time before he slowed down. He says, \"She's a fierce competitor. When she sets her mind to something, she does it.\" He also adds, \"She's always willing to help with anything.\"",
-    featured: true,
-  },
-  {
     name: "Pauline Deleeuw",
     slug: "pauline-deleeuw",
     photo: "/inductees/pauline-deleeuw.jpg",
@@ -367,6 +358,15 @@ export const inductees: Inductee[] = [
     year: 2026,
     category: "shooting",
     bio: "Sean has been a lifetime member of the ATA since joining in 1981 at age 12. His best singles average is 99.68%, his top handicap average is 96.52%, and his highest doubles average is 99.67%. Sean has won several Utah Championships: Singles once, Handicap twice, Doubles once, HOA six times, and HAA five times. He has also earned many Satellite Grand Championships and Grand American Trophies, including the coveted HOA ring at the Grand American. Sean has been named to the ATA All-American team 31 times: once as a sub-junior, three times as a junior, and 27 times on the First and Second Open Teams. He has been on the team for 19 straight years, from 2007 to 2025.",
+    featured: true,
+  },
+  {
+    name: "Pam Wright",
+    slug: "pam-wright",
+    photo: "/inductees/pam-wright.jpg",
+    year: 2026,
+    category: "shooting",
+    bio: "Pam has won many Utah State Lady I and II Championships, as well as several Western Zone, Western Grand, and Grand American trophies. She has been a member of the Utah State Trap Shooting Association's Ladies Team for 15 straight years, from 2001 to 2025, serving as team captain for three of those years. Pam has been named to the ATA All-American Lady 2 First Team five years in a row, qualifying as an All-American Lady II Team member in 2025, 2024, 2023, 2022, and 2021. Pam got her start in trapshooting by practicing with her brother Doug Ford, some of the boys, and Leslie Hight. Doug remembers that he and Pam would shoot together from time to time before he slowed down. He says, \"She's a fierce competitor. When she sets her mind to something, she does it.\" He also adds, \"She's always willing to help with anything.\"",
     featured: true,
   },
 ];
