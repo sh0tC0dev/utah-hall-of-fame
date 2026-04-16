@@ -81,7 +81,7 @@ export default async function InducteePage({
           )}
           <div className={styles.bio}>
             {person.bio ? (
-              <p>{person.bio}</p>
+              person.bio.split("\n\n").map((para, i) => <p key={i}>{para}</p>)
             ) : (
               <p>
                 <em>
