@@ -1,5 +1,8 @@
 # Utah Hall of Fame — USTA Inductee Showcase
 
+> **Deploy:** `vercel --prod` only. Never preview. Production Gate required.
+> See `~/Desktop/dev/global/CLAUDE_global_full.md` for the gate steps.
+
 Static showcase site for the Utah State Trapshooting Association Hall of Fame.
 
 ## Stack
