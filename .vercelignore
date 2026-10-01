@@ -1,0 +1,4 @@
+.env*
+.mcp.json
+.playwright-mcp
+.claude
