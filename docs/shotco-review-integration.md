@@ -169,8 +169,9 @@ holds 9 test files in all.
 - **Home hero entrance animations.** `src/app/page.module.css` has 6
   `animation:` declarations (1 logoReveal, 5 fadeUp). Each runs once on load and the last
   finishes 1.4 s after it; none loops. They are not wired to the selection state.
-- **Contact and nominate forms.** `src/app/api/contact/route.ts` and
-  `src/app/api/nominate/route.ts` are untouched (see "Before enabling").
+- **Contact and nominate forms.** The SHO-1125 commits leave
+  `src/app/api/contact/route.ts` and `src/app/api/nominate/route.ts` alone; their
+  fix is SHO-1138, its own commit (see "Before enabling").
 - **`.vercelignore`** already lists `.env*`, so it was not changed. That pattern
   also covers the committed `.env.example`, which is harmless on this host's remote
   build (see Deploy).
@@ -207,16 +208,22 @@ reports the store and secrets as provisioned; this branch read no values.
 
 ## Before enabling (for the lead)
 
-1. **The site's own forms probably fail today.** `/api/contact` and
-   `/api/nominate` send from `Utah HOF <onboarding@resend.dev>` to 2 trustee
-   addresses, and both ignore the error `resend.emails.send` returns, so a
-   refusal reaches the visitor as success. Resend's documented rule (not measured
-   here) delivers its testing sender only to the account owner's own address.
-   This is the same shape as NLO Alaska's SHO-1134. The review tool reads the same
+1. **The site's own forms: found in the round-2 review (MEDIUM, live before this
+   install), fixed in SHO-1138.** Before SHO-1138, `/api/contact` and `/api/nominate`
+   sent from `Utah HOF <onboarding@resend.dev>` to 2 trustee addresses, and both
+   ignored the error `resend.emails.send` returns, so a refusal reached the visitor
+   as success. This site's `RESEND_API_KEY` is on the ShotCo Resend account (the
+   lead's provisioning note), where the lead measured HTTP 403 for that testing
+   sender and a non-owner recipient (NLO Alaska, SHO-1134), so both forms were very
+   likely failing while answering success. SHO-1138 is the last commit on this
+   branch, kept apart so it reverts alone: both routes send from
+   `Utah Trapshooting Hall of Fame <utah-hof-contact@forms.shotcopro.com>`, the
+   contact route keeps the visitor's address as reply-to and refuses one carrying
+   whitespace or a line break (the nomination form collects no visitor address, so
+   it has no reply-to), and each route answers its existing 500 when Resend refuses.
+   Recipients, fields and copy are unchanged. The review tool reads the same
    `RESEND_API_KEY` but its code does not touch the forms; a change of that key's
-   value reaches all three. NLO's fix (a
-   `forms.shotcopro.com` sender, the error checked) would fit here as its own
-   change. Not changed in this branch.
+   value reaches all three.
 2. **The unshipped `add-vercel-analytics` branch** (in the main checkout, no
    upstream) mounts `<Analytics />` with no `beforeSend`. If it merges after this
    install it must gain one that drops `/review`, `/review/...` and `/api/review`
@@ -265,6 +272,13 @@ ran 2 tests: 1 passed and 1 failed ("the footer renders the review trigger only 
 Reverted by the inverse edit: the marker now occurs 0 times and the token once,
 `git diff --quiet` clean, and `Footer.tsx` hashes to its committed blob
 `5f921a3bfa28`. Plant, test and revert were separate commands.
+A second plant, from the round-2 review (round 3, on `ca7870f`): the 5-line
+`:root[data-review-selecting="true"] .scroll-reveal` rule in `src/app/globals.css`
+was replaced by a marker comment, and the same file ran 2 tests: 1 passed and
+1 failed ("scroll reveals show their finished state while a reviewer is selecting").
+Reverted by the inverse edit: the marker occurs 0 times and the rule 1,
+`git diff --quiet` clean, and `globals.css` hashes to its committed blob `b3f9dd735f70`.
+Plant, test and revert were separate commands.
 
 **Flag off** (production build, `REVIEW_ENABLED` unset, measured 2026-10-06 15:59:13 PDT):
 51 prerendered HTML files; 0 carry `data-review-ui`, 0 carry
