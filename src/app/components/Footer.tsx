@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ReviewTrigger } from "@/components/review/entry";
+import { reviewEnabled } from "@/lib/review/enabled";
 import styles from "./Footer.module.css";
 
 export function Footer() {
@@ -27,6 +29,12 @@ export function Footer() {
         >
           Utah State Trapshooting Association
         </a>
+        {reviewEnabled() && (
+          <>
+            {" "}
+            &middot; <ReviewTrigger />
+          </>
+        )}
       </p>
       <Link href="/contact?subject=donate" className={styles.donateLink}>
         Support the Hall

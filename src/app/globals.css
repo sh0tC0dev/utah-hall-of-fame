@@ -155,3 +155,13 @@ body::after {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ShotCo Review (SHO-1125): while a reviewer is selecting, every reveal shows its
+   finished state at once, so a section that has not scrolled into view yet is
+   visible to click and to capture. The kit sets the attribute to "true" or
+   "false" and removes it when the workspace closes. */
+:root[data-review-selecting="true"] .scroll-reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}

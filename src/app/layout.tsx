@@ -7,6 +7,8 @@ import {
 } from "next/font/google";
 import { Nav } from "./components/Nav";
 import { Footer } from "./components/Footer";
+import { ReviewEntry } from "@/components/review/entry";
+import { reviewEnabled } from "@/lib/review/enabled";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -63,6 +65,7 @@ export default function RootLayout({
         <Nav />
         <div style={{ position: "relative", zIndex: 1 }}>{children}</div>
         <Footer />
+        <ReviewEntry enabled={reviewEnabled()} />
       </body>
     </html>
   );
