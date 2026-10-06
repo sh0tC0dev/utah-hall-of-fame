@@ -190,7 +190,7 @@ reports the store and secrets as provisioned; this branch read no values.
 
 | Name | Secret | Value for this client |
 |---|---|---|
-| `REVIEW_ENABLED` | no | `false` until the acceptance drive |
+| `REVIEW_ENABLED` | no | `true` on production, read back before the 2026-10-06 deploy |
 | `REVIEW_SITE_ID` | no | the lead's provisioned id (lowercase, digits, hyphens) |
 | `REVIEW_SITE_NAME` | no | Utah Trapshooting Hall of Fame |
 | `REVIEW_REPOSITORY` | no | `https://github.com/sh0tC0dev/utah-hall-of-fame` |
@@ -203,7 +203,7 @@ reports the store and secrets as provisioned; this branch read no values.
 | `RESEND_API_KEY` | **yes** | shared by name with `/api/contact` and `/api/nominate`: whichever key is set serves the tool and both forms |
 | `REVIEW_SECRET` | **yes** | a fresh secret per environment |
 | `BLOB_READ_WRITE_TOKEN` | **yes** | this client's own private Blob store |
-| `REVIEW_SOURCE_VERSION` | no | unset; derived from Vercel's commit sha at build time |
+| `REVIEW_SOURCE_VERSION` | no | unset. Measured 2026-10-06: the CLI remote build had no `VERCEL_GIT_COMMIT_SHA` and no `.git`, so it stamps `unknown-build` (see Measurements) |
 | `REVIEW_TRUSTED_PROXY` | no | unset (Vercel) |
 
 ## Before enabling (for the lead)
@@ -312,18 +312,18 @@ its pid. Screenshots (scratch, not committed): `flag-on-footer-1440.png`,
 | # | Item | Status |
 |---|---|---|
 | 1 | Flag off; flag on with a value missing | done locally (both builds above) |
-| 2 | Listed address gets its PIN, unlisted gets the same line | lead: after deploy |
-| 3 | Wrong, expired, replayed, other-browser PINs fail | lead: after deploy (the kit service tests cover the logic with fake transport and storage) |
-| 4 | Footer icon placement; launch scrolls to top; GO | placement and scroll-to-top done locally; GO: lead: after deploy |
-| 5 | Add Comment; hover box follows | lead: after deploy |
-| 6 | Save quietly; drafts survive | lead: after deploy |
-| 7 | Two tabs | lead: after deploy |
-| 8 | Screenshots accurate | lead: after deploy |
-| 9 | Carousels and reveals pause | reveal rule done and measured on an injected element; live selection: lead: after deploy |
-| 10 | Authorized test send | lead: after deploy |
-| 11 | Attach Files | lead: after deploy |
-| 12 | Refused file kind | lead: after deploy |
-| 13 | Report links; routes out of analytics and sitemap | sitemap: done (none on the host); analytics: done, the host runs none and loads no ad embed; report: lead: after deploy |
+| 2 | Listed address gets its PIN, unlisted gets the same line | listed: done live (jon@ asked from the footer; the code mail's Date header reads 16:43:31 PDT); unlisted: not run (the drive types jon@ only) |
+| 3 | Wrong, expired, replayed, other-browser PINs fail | not run live (the kit service tests cover the logic with fake transport and storage) |
+| 4 | Footer icon placement; launch scrolls to top; GO | done live: in the footer after the USTA link at 1440 (954, 792) and 390 (274, 712); launch scrolled to 0; GO turned selection on |
+| 5 | Add Comment; hover box follows | selection opened the editor on the clicked home `h1`: done live; hover box after scroll or resize: not run |
+| 6 | Save quietly; drafts survive | Save Change returned to the page and Changes went 0 to 1: done live; drafts across reload: not run |
+| 7 | Two tabs | not run |
+| 8 | Screenshots accurate | desktop: the 1440 snapshot frames the `h1` (seen in the editor and the report); phone: not run |
+| 9 | Carousels and reveals pause | done live: with selection on, 7 of 7 home `.scroll-reveal` read opacity 1 (the host has no carousel) |
+| 10 | Authorized test send | batch `52040ac3` delivered once to Atlas, Cc jon@; Reply-To, `Reviewer:` and `reviewer` are jon@; repository right; `kitVersion` 0.5.2 equals the last line. **Build revision FAILED: `unknown-build`** (Measurements). Drafts on a failed send: not run |
+| 11 | Attach Files | desktop done live: JPEG, PNG, WebP and PDF each listed with name and size, the card counted 4 files, delivered as `change-1-file-<k>-<name>`, `Attachments:` equals changes.json `attachments`, the report offers 4 downloads; phone and Remove: not run |
+| 12 | Refused file kind | GIF refused with "Attach a JPEG, PNG, WebP or PDF file" and nothing added: done live; the over-3 MB cases: not run |
+| 13 | Report links; routes out of analytics and sitemap | sitemap: done (none on the host); analytics: done, the host runs none and loads no ad embed; report with its valid key: done live; invalid key: not run |
 | 14 | Keyboard, focus, dialogs; no public page regression | flag-off footer equal to live; keyboard drive: lead: after deploy |
 | 15 | Unit tests, lint, typecheck, build | done (above) |
 | 16 | Retention and hosting limits reviewed | pending owner acceptance (above) |
@@ -343,15 +343,22 @@ checkout has no `.vercel` folder, so link the deploying tree first
 so stay on remote builds. `vercel.json` (`e4f9812`) turns off git-triggered
 deploys for `main` and `master`.
 
+A remote CLI build stamps `unknown-build` (measured 2026-10-06, below). A stamped
+build needs `REVIEW_SOURCE_VERSION` set for that build (the kit reads it first) or a
+prebuilt build from a clean checkout (the kit's git read).
+
 ## Measurements (lead, after the deploy)
 
 | Item | Value |
 |---|---|
-| Deploy id / created | |
-| Built from (sha) | |
-| `REVIEW_SOURCE_VERSION` stamped | |
-| Home HTML "Open client review" | |
-| `GET /api/review` no cookie (401 configured / 503 value missing) | |
-| Upload audit (env-named files) | |
-| Drive: PIN, change, four attachment kinds, refused kind, batch in Atlas | |
-| Reviewers | |
+| Deploy id / created | `dpl_21or2mYxf8x7ydsodNCSkyLv1EZU`, created 2026-10-06 16:40:37 PDT, READY, target production, aliased `utahtraphalloffame.com` and `www`; it replaced `dpl_43sXsBUEyeCTEJUbihmD3M66WSbD`. Remote build, `npx vercel deploy --prod --yes` (CLI 62.5.0, Node 24.13.1) from this worktree linked to `prj_EtK1jGrApZpPJIRHMYO025lSF0O4` |
+| Built from (sha) | `2413128` (`24131285db660b3b25c14a326bf641903eac82b5`), the deployment's `gitCommitSha`, tree clean (0 status lines). `origin/main` was fast-forwarded `e4f9812..2413128` first |
+| `REVIEW_SOURCE_VERSION` stamped | **`unknown-build` (FAILED)**: the batch email's `Reviewed build:` line and changes.json `changes[0].reviewedBuild` and `changes[0].anchor.version`. The build had neither `REVIEW_SOURCE_VERSION` nor `VERCEL_GIT_COMMIT_SHA`, and the upload has no `.git`. Correcting it takes another deploy |
+| Home HTML "Open client review" | 1 (`data-review-ui` 1; "Hall of Fame" 10 times as the control), `curl --compressed` of the live home 16:41:37 PDT |
+| `GET /api/review` no cookie (401 configured / 503 value missing) | 401 `{"error":"Request access to start reviewing."}`; `/review` 200; `www` home, `/contact` and `/nominate` 200 |
+| Upload audit (env-named files) | 0: 121 source files, none named `.env*` (`.vercelignore` keeps both env examples out), no `node_modules`, `.next`, `.vercel` or `.git` |
+| Monitor and BAT | no `test:bat` script on this host; `check-sites.mjs` 16:42 PDT: ALL CLEAR, 71/71 |
+| Drive: PIN, change, four attachment kinds, refused kind, batch in Atlas | jon@ PIN from the footer launcher at 1440x900, entered without printing; GO; one change on the home `h1` "Hall of Fame", comment `SHO-1125 acceptance drive, please ignore`; JPEG, PNG, WebP and PDF attached (the JPEG named `drive-photo.jpeg`), `drive-refused.gif` refused with "Not attached: drive-refused.gif (Attach a JPEG, PNG, WebP or PDF file)." and nothing added; sent 16:45:40 PDT (changes.json `submittedAt`). Batch `52040ac3`, subject `Utah Trapshooting Hall of Fame: 1 website change [52040ac3]`, in Atlas and jon@ 16:45:41 PDT, files `change-1-file-1-drive-photo.jpeg`, `-2-drive-shot.png`, `-3-drive-pic.webp`, `-4-drive-notes.pdf`, last line `Sent by ShotCo Review 0.5.2`. Report link opened in the drive browser: 4 downloads. Batch and code mail labelled in both mailboxes |
+| Reviewers | `REVIEW_ACCESS_EMAILS` holds 3 addresses: Ed Wehking (President), John Vosnos (Secretary) and jon@shotcopro.com, compared as a set, no address printed |
+
+Measured 2026-10-06 16:50 PDT by the SHO-1125 deploy agent.
