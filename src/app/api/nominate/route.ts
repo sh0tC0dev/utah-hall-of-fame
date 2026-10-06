@@ -76,12 +76,14 @@ Name: ${submitterName}
 Date: ${submitterDate}
     `.trim();
 
-    await resend.emails.send({
-      from: "Utah HOF <onboarding@resend.dev>",
+    const { error } = await resend.emails.send({
+      from: "Utah Trapshooting Hall of Fame <utah-hof-contact@forms.shotcopro.com>",
       to: CONTACT_EMAILS,
       subject: `HOF Nomination: ${nomineeName}`,
       text: emailBody,
     });
+    // Resend returns a refusal instead of throwing; the catch answers the 500.
+    if (error) throw new Error(error.message);
 
     return NextResponse.json({ success: true });
   } catch (error) {
