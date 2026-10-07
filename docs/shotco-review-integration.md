@@ -203,7 +203,7 @@ reports the store and secrets as provisioned; this branch read no values.
 | `RESEND_API_KEY` | **yes** | shared by name with `/api/contact` and `/api/nominate`: whichever key is set serves the tool and both forms |
 | `REVIEW_SECRET` | **yes** | a fresh secret per environment |
 | `BLOB_READ_WRITE_TOKEN` | **yes** | this client's own private Blob store |
-| `REVIEW_SOURCE_VERSION` | no | unset. Measured 2026-10-06: the CLI remote build had no `VERCEL_GIT_COMMIT_SHA` and no `.git`, so it stamps `unknown-build` (see Measurements) |
+| `REVIEW_SOURCE_VERSION` | no | unset as a project variable. Pass it per deploy as `--build-env REVIEW_SOURCE_VERSION=<short head sha>`: a CLI remote build has no `VERCEL_GIT_COMMIT_SHA` and no `.git`, so without it the stamp is `unknown-build` (measured 2026-10-06, see Measurements) |
 | `REVIEW_TRUSTED_PROXY` | no | unset (Vercel) |
 
 ## Before enabling (for the lead)
@@ -320,7 +320,7 @@ its pid. Screenshots (scratch, not committed): `flag-on-footer-1440.png`,
 | 7 | Two tabs | not run |
 | 8 | Screenshots accurate | desktop: the 1440 snapshot frames the `h1` (seen in the editor and the report); phone: not run |
 | 9 | Carousels and reveals pause | done live: with selection on, 7 of 7 home `.scroll-reveal` read opacity 1 (the host has no carousel) |
-| 10 | Authorized test send | batch `52040ac3` delivered once to Atlas, Cc jon@; Reply-To, `Reviewer:` and `reviewer` are jon@; repository right; `kitVersion` 0.5.2 equals the last line. **Build revision FAILED: `unknown-build`** (Measurements). Drafts on a failed send: not run |
+| 10 | Authorized test send | batch `52040ac3` delivered once to Atlas, Cc jon@; Reply-To, `Reviewer:` and `reviewer` are jon@; repository right; `kitVersion` 0.5.2 equals the last line. Build revision: that batch carried `unknown-build`; the stamp redeploy now returns `9d141c3` (Measurements). No second batch was sent. Drafts on a failed send: not run |
 | 11 | Attach Files | desktop done live: JPEG, PNG, WebP and PDF each listed with name and size, the card counted 4 files, delivered as `change-1-file-<k>-<name>`, `Attachments:` equals changes.json `attachments`, the report offers 4 downloads; phone and Remove: not run |
 | 12 | Refused file kind | GIF refused with "Attach a JPEG, PNG, WebP or PDF file" and nothing added: done live; the over-3 MB cases: not run |
 | 13 | Report links; routes out of analytics and sitemap | sitemap: done (none on the host); analytics: done, the host runs none and loads no ad embed; report with its valid key: done live; invalid key: not run |
@@ -343,9 +343,12 @@ checkout has no `.vercel` folder, so link the deploying tree first
 so stay on remote builds. `vercel.json` (`e4f9812`) turns off git-triggered
 deploys for `main` and `master`.
 
-A remote CLI build stamps `unknown-build` (measured 2026-10-06, below). A stamped
-build needs `REVIEW_SOURCE_VERSION` set for that build (the kit reads it first) or a
-prebuilt build from a clean checkout (the kit's git read).
+A remote CLI build has no git checkout and no `VERCEL_GIT_COMMIT_SHA`, so on its own
+it stamps `unknown-build` (measured 2026-10-06, below). Every deploy therefore
+carries the stamp as a build variable, which the kit reads first:
+`npx vercel deploy --prod --yes --build-env REVIEW_SOURCE_VERSION=<short head sha>`.
+Read the deployed stamp rather than assume it: it is the `version` field of the
+verify answer from `/api/review`.
 
 ## Measurements (lead, after the deploy)
 
@@ -353,7 +356,10 @@ prebuilt build from a clean checkout (the kit's git read).
 |---|---|
 | Deploy id / created | `dpl_21or2mYxf8x7ydsodNCSkyLv1EZU`, created 2026-10-06 16:40:37 PDT, READY, target production, aliased `utahtraphalloffame.com` and `www`; it replaced `dpl_43sXsBUEyeCTEJUbihmD3M66WSbD`. Remote build, `npx vercel deploy --prod --yes` (CLI 62.5.0, Node 24.13.1) from this worktree linked to `prj_EtK1jGrApZpPJIRHMYO025lSF0O4` |
 | Built from (sha) | `2413128` (`24131285db660b3b25c14a326bf641903eac82b5`), the deployment's `gitCommitSha`, tree clean (0 status lines). `origin/main` was fast-forwarded `e4f9812..2413128` first |
-| `REVIEW_SOURCE_VERSION` stamped | **`unknown-build` (FAILED)**: the batch email's `Reviewed build:` line and changes.json `changes[0].reviewedBuild` and `changes[0].anchor.version`. The build had neither `REVIEW_SOURCE_VERSION` nor `VERCEL_GIT_COMMIT_SHA`, and the upload has no `.git`. Correcting it takes another deploy |
+| `REVIEW_SOURCE_VERSION` stamped | **`unknown-build` (FAILED)** on this deployment: the batch email's `Reviewed build:` line and changes.json `changes[0].reviewedBuild` and `changes[0].anchor.version`. The build had neither `REVIEW_SOURCE_VERSION` nor `VERCEL_GIT_COMMIT_SHA`, and the upload has no `.git`. Fixed by the stamp redeploy below |
+| Stamp redeploy | `dpl_BSLMWmDw3Ub9sVPy5xpbSArBXor1`, created 2026-10-06 17:00:50 PDT, ready 17:01:05, READY, target production; `/v4/aliases/utahtraphalloffame.com` names it, and `www` is aliased too. It replaced `dpl_21or2mYxf8x7ydsodNCSkyLv1EZU`. `npx vercel deploy --prod --yes --build-env REVIEW_SOURCE_VERSION=9d141c3` (CLI 62.5.0, Node 24.13.1), remote build, from this worktree at `9d141c3` (the deployment's `gitCommitSha` `9d141c38f2b56861b5844b31e191e5169fec5f03`, tree clean, equal to `origin/main`). `9d141c3` is docs only on top of `2413128` (`git diff --stat`: 1 file, this record), so no code changed. No env or project setting changed |
+| Stamp proved | `9d141c3`, bare. A PIN was requested from the live footer launcher for jon@shotcopro.com only at 17:03:23 PDT (agent-browser, 1440 x 900, `innerWidth` read back); the code mail arrived 17:03:24 PDT and the code was entered without printing. The verify answer (status 200) returned `version` `9d141c3`; a `GET /api/review` on the same session returned the same. The session then logged out (`GET` after it: 401) and the code mail is labelled ATLAS_PROCESSED. No batch was sent and neither site form was submitted |
+| Redeploy probes | 17:01:32 PDT, `curl --compressed` of the live home: 200, `data-review-ui` 1, "Open client review" 1 ("Hall of Fame" 10 times as the control); `GET /api/review` with no cookie 401 `{"error":"Request access to start reviewing."}`; `/review`, `/contact`, `/nominate` and the `www` home 200. Upload audit: 121 source and 260 output files, 0 named `.env*`, 0 under `node_modules`, `.next`, `.vercel` or `.git`. `check-sites.mjs` (its header 2026-10-07T00:01:54Z): ALL CLEAR, 71/71 |
 | Home HTML "Open client review" | 1 (`data-review-ui` 1; "Hall of Fame" 10 times as the control), `curl --compressed` of the live home 16:41:37 PDT |
 | `GET /api/review` no cookie (401 configured / 503 value missing) | 401 `{"error":"Request access to start reviewing."}`; `/review` 200; `www` home, `/contact` and `/nominate` 200 |
 | Upload audit (env-named files) | 0: 121 source files, none named `.env*` (`.vercelignore` keeps both env examples out), no `node_modules`, `.next`, `.vercel` or `.git` |
@@ -361,4 +367,5 @@ prebuilt build from a clean checkout (the kit's git read).
 | Drive: PIN, change, four attachment kinds, refused kind, batch in Atlas | jon@ PIN from the footer launcher at 1440x900, entered without printing; GO; one change on the home `h1` "Hall of Fame", comment `SHO-1125 acceptance drive, please ignore`; JPEG, PNG, WebP and PDF attached (the JPEG named `drive-photo.jpeg`), `drive-refused.gif` refused with "Not attached: drive-refused.gif (Attach a JPEG, PNG, WebP or PDF file)." and nothing added; sent 16:45:40 PDT (changes.json `submittedAt`). Batch `52040ac3`, subject `Utah Trapshooting Hall of Fame: 1 website change [52040ac3]`, in Atlas and jon@ 16:45:41 PDT, files `change-1-file-1-drive-photo.jpeg`, `-2-drive-shot.png`, `-3-drive-pic.webp`, `-4-drive-notes.pdf`, last line `Sent by ShotCo Review 0.5.2`. Report link opened in the drive browser: 4 downloads. Batch and code mail labelled in both mailboxes |
 | Reviewers | `REVIEW_ACCESS_EMAILS` holds 3 addresses: Ed Wehking (President), John Vosnos (Secretary) and jon@shotcopro.com, compared as a set, no address printed |
 
-Measured 2026-10-06 16:50 PDT by the SHO-1125 deploy agent.
+Measured 2026-10-06 16:50 PDT by the SHO-1125 deploy agent; the stamp redeploy
+rows measured 2026-10-06 17:04 PDT by the SHO-1125 stamp agent.
